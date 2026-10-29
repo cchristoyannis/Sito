@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Constantino Christoyannis aiuta imprese e investitori a trasformare l'ESG da obbligo a opportunità di crescita misurabile. ESG, credito e filiere. Relatore e formatore.">
+<meta property="og:title" content="Constantino Christoyannis">
+<meta property="og:description" content="Aiuto imprese e investitori a trasformare l'ESG da obbligo a opportunità di crescita misurabile.">
+<meta property="og:type" content="profile">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Constantino Christoyannis","jobTitle":"Advisory & Strategic Growth Director","worksFor":{"@type":"Organization","name":"Tecno Group"},"knowsAbout":["ESG","Sustainable finance","Sustainability reporting","Supply chain ESG"],"sameAs":["https://www.linkedin.com/in/constantino-christoyannis/"]}</script>
+<title>Constantino Christoyannis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Spectral:ital,wght@1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: sito da relatore. Hero scuro a tutta larghezza con foto, poi bande alterne chiaro/scuro; il verde bilancio e l'ottone tengono insieme il tutto */
+:root{
+  --deep:#0a1631; --deep-2:#173561; --on-deep:#eef2f8; --on-deep-muted:#a9b8d2;
+  --paper:#ffffff; --paper-2:#f1f4f9; --ink:#121c2e; --muted:#5a6578; --rule:#d8dfe9;
+  --brass:#c9a24a; --brass-ink:#7a5c1c; --ledger:#1d4e89;
+  --head:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Spectral", Georgia, serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--deep)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);font-stretch:112%;letter-spacing:-.015em;text-wrap:balance;margin:0}
+.kicker{font:500 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-ink);margin:0 0 14px}
+.on-deep .kicker{color:var(--brass)}
+
+body:not(.is-en) [lang="en"]{display:none!important}
+body.is-en [lang="it"]{display:none!important}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--deep);color:var(--on-deep);transition:box-shadow .2s}
+header.top.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.mark{font-family:var(--head);font-weight:700;font-stretch:115%;font-size:1rem;letter-spacing:.02em;color:var(--on-deep);text-decoration:none;text-transform:uppercase}
+.mark i{font-style:normal;color:var(--brass)}
+nav.links{display:flex;gap:26px;align-items:center;font-size:.9rem}
+nav.links a{color:var(--on-deep-muted);text-decoration:none}
+nav.links a:hover{color:var(--on-deep)}
+nav.links a.book{color:var(--deep);background:var(--brass);padding:8px 14px;border-radius:2px;font-weight:600}
+.lang{display:flex;gap:2px}
+.lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
+.lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
+@media (max-width:860px){nav.links a:not(.book){display:none}}
+
+/* hero */
+.hero{background:linear-gradient(165deg,#060e22 0%,#0a1631 35%,#163a6b 100%);color:var(--on-deep);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:stretch;padding-block:64px 0}
+.hero-copy{padding-bottom:72px;align-self:center}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.4rem);font-weight:800;line-height:.98;margin-bottom:26px;text-transform:uppercase}
+.hero h1 span{display:block;color:var(--brass)}
+.thesis{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.35;margin:0 0 30px;max-width:30ch;color:var(--on-deep)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;padding:14px 22px;border-radius:2px;text-decoration:none;border:1px solid var(--brass);transition:transform .15s, background-color .15s, color .15s}
+.btn.primary{background:var(--brass);color:#0a1631}
+.btn.ghost{color:var(--on-deep);border-color:rgba(255,255,255,.35)}
+.btn:hover{transform:translateY(-2px)}
+.btn .arr{transition:transform .15s}
+.btn:hover .arr{transform:translateX(4px)}
+.photo{position:relative;min-height:520px;background:
+  radial-gradient(120% 80% at 70% 20%, rgba(201,162,74,.28), transparent 60%),
+  linear-gradient(160deg, var(--deep-2), #0a1631 70%);
+  border-top-left-radius:2px;border-top-right-radius:2px;overflow:hidden}
+.photo .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--on-deep-muted);font:500 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:24px}
+.photo .ph b{display:block;font-family:var(--head);font-size:7rem;font-weight:800;letter-spacing:-.04em;color:rgba(238,243,240,.12);line-height:1;margin-bottom:12px}
+.photo .tag{position:absolute;left:0;bottom:0;background:var(--brass);color:#0a1631;padding:12px 18px;font-weight:600;font-size:.88rem;max-width:90%}
+.photo .tag small{display:block;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:0;padding-block:44px 0}.hero-copy{padding-bottom:40px}.photo{min-height:380px;margin-inline:calc(-1 * max(20px, env(safe-area-inset-left, 0px)))}}
+
+/* numeri */
+.stats{background:var(--deep-2);color:var(--on-deep)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:0}
+.stat{padding:30px 22px 30px 0}
+.stat + .stat{padding-left:22px;border-left:1px solid rgba(255,255,255,.1)}
+.stat b{display:block;font-family:var(--head);font-weight:800;font-stretch:118%;font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--brass);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:.9rem;color:var(--on-deep-muted);max-width:22ch}
+@media (max-width:760px){.stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.stat,.stat + .stat{padding:22px 12px 22px 0;border-left:0}.stat:nth-child(even){padding-left:16px;border-left:1px solid rgba(255,255,255,.1)}.stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.1)}}
+
+/* nastro enti */
+.ribbon{background:var(--paper-2);border-bottom:1px solid var(--rule);overflow:hidden}
+.ribbon p{margin:0;padding:18px 0 4px;text-align:center;font:500 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.track{display:flex;width:max-content;animation:slide 48s linear infinite}
+.track ul{display:flex;gap:56px;list-style:none;margin:0;padding:14px 28px 22px}
+.track li{font-family:var(--head);font-weight:700;font-stretch:110%;font-size:1.25rem;color:var(--ink);opacity:.62;white-space:nowrap;letter-spacing:.01em}
+.ribbon:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.track ul:last-child{display:none}.track ul{flex-wrap:wrap;justify-content:center;gap:12px 32px}}
+
+section{scroll-margin-top:70px}
+.sec{padding-block:96px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:750;line-height:1.02;max-width:18ch}
+.sec-head p{margin:0;color:var(--muted);max-width:42ch}
+@media (max-width:760px){.sec{padding-block:64px}.sec-head{margin-bottom:32px}}
+
+/* chi sono */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.about h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:750;line-height:1.05}
+.about .lede{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.4;color:var(--ledger);margin:0 0 20px}
+.about p{margin:0 0 16px;max-width:60ch}
+.roles{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+.roles li{padding:14px 16px;background:var(--paper-2);border-left:3px solid var(--brass);font-weight:500}
+.roles li span{display:block;font-weight:400;color:var(--muted);font-size:.9rem}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* temi */
+.topics-sec{background:var(--paper-2)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--rule);border:1px solid var(--rule)}
+.card{background:var(--paper);padding:30px 28px 34px;position:relative;transition:background-color .2s}
+.card .n{font:500 .72rem var(--mono);letter-spacing:.14em;color:var(--brass-ink)}
+.card h3{font-size:1.35rem;font-weight:700;line-height:1.15;margin:14px 0 12px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .fmt{display:inline-block;margin-top:18px;font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ledger);border:1px solid var(--rule);padding:4px 8px}
+.card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--brass);transition:width .3s}
+.card:hover::after{width:100%}
+.card.cta-card{background:var(--deep);color:var(--on-deep);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.card.cta-card h3{color:var(--on-deep)}
+.card.cta-card p{color:var(--on-deep-muted)}
+@media (max-width:960px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+
+/* in azione */
+.gallery{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:16px}
+.shot{position:relative;min-height:260px;background:linear-gradient(150deg,var(--deep-2),var(--deep));color:var(--on-deep);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.shot.big{grid-row:span 2;min-height:540px}
+.shot .ph{position:absolute;top:18px;right:18px;font:500 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-muted);border:1px dashed rgba(255,255,255,.25);padding:4px 8px}
+.shot time{font:500 .72rem var(--mono);letter-spacing:.12em;color:var(--brass)}
+.shot strong{font-family:var(--head);font-size:1.3rem;font-weight:700;line-height:1.15;margin-top:6px;display:block}
+.shot.big strong{font-size:1.9rem}
+.shot span.d{color:var(--on-deep-muted);font-size:.9rem;margin-top:6px;display:block;max-width:44ch}
+@media (max-width:760px){.gallery{grid-template-columns:1fr}.shot.big{grid-row:auto;min-height:380px}}
+.more{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--rule)}
+.more li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.more time{font:500 .8rem var(--mono);color:var(--brass-ink);font-variant-numeric:tabular-nums;padding-top:2px}
+.more span{color:var(--muted);font-size:.92rem;display:block}
+@media (max-width:520px){.more li{grid-template-columns:1fr;gap:2px}}
+
+/* organizzatori */
+.book-sec{background:var(--deep);color:var(--on-deep)}
+.book-sec .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.book-sec h2{font-size:clamp(2rem,4.2vw,3.3rem);font-weight:800;line-height:1;margin-bottom:20px}
+.book-sec p{color:var(--on-deep-muted);max-width:46ch}
+.bio{background:var(--deep-2);border:1px solid rgba(255,255,255,.1);padding:24px}
+.bio-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.bio-head b{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.bio p{color:var(--on-deep);margin:0;max-width:none}
+.copy{font:600 .8rem var(--body);background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--on-deep);padding:6px 12px;border-radius:2px;cursor:pointer}
+.copy:hover{border-color:var(--brass);color:var(--brass)}
+.spell{font-size:.88rem;margin-top:14px}
+.mail{font-family:var(--head);font-weight:700;font-stretch:108%;font-size:clamp(1.3rem,3vw,2rem);color:var(--on-deep);word-break:break-word;margin:22px 0 14px;user-select:all}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+@media (max-width:860px){.book-sec .wrap{grid-template-columns:1fr;gap:36px}}
+
+footer{background:var(--deep);color:var(--on-deep-muted);border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{padding-block:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem}
+footer a{color:var(--on-deep-muted)}
+
+/* comparsa allo scorrimento: parte già visibile, si muove solo un poco */
+@media (prefers-reduced-motion:no-preference){
+  .rise{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .rise:not(.in){transform:translateY(18px)}
+  .hero h1, .hero .thesis, .hero .cta{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero .thesis{animation-delay:.08s}.hero .cta{animation-delay:.16s}
+  @keyframes up{from{transform:translateY(22px)}}
+}
+
+/* v3: banner dati di mercato, servizi, pillole, pubblicazioni */
+.stats .src{grid-column:1/-1;padding:0 0 16px;font-size:.74rem;color:var(--on-deep-muted)}
+.stats .src a{color:var(--on-deep-muted)}
+.stat b small{font-size:.5em;font-weight:700;margin-left:2px}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--rule);border:1px solid var(--rule)}
+.svc .card h3{font-size:1.4rem}
+.svc ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.svc li{font-size:.92rem;color:var(--ink);padding-left:16px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;background:var(--brass)}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+.also{display:flex;flex-wrap:wrap;gap:8px 10px;margin:22px 0 0;padding:0;list-style:none}
+.also li{font-size:.85rem;border:1px solid var(--rule);padding:5px 10px;color:var(--muted);background:var(--paper)}
+.tecno{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:22px 24px;background:var(--deep);color:var(--on-deep)}
+.tecno p{margin:0;max-width:60ch;color:var(--on-deep-muted)}
+.tecno p b{color:var(--on-deep);font-weight:600}
+.with{margin-top:56px}
+.with h3{font:500 .72rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--rule);border:1px solid var(--rule)}
+.logos div{background:var(--paper);min-height:96px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:14px;font-family:var(--head);font-weight:700;font-stretch:108%;font-size:1.02rem;line-height:1.2}
+.logos div span{display:block;font:400 .74rem var(--body);color:var(--muted);margin-top:6px;font-stretch:100%}
+@media (max-width:760px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pill{background:var(--paper);border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .2s}
+.pill:hover{transform:translateY(-3px);border-color:var(--brass)}
+.pill time{font:500 .72rem var(--mono);letter-spacing:.12em;color:var(--brass-ink)}
+.pill h3{font-size:1.2rem;font-weight:700;line-height:1.2}
+.pill p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+.pill a{font-weight:600;font-size:.9rem;color:var(--ledger);text-decoration:none}
+.pill a:hover{text-decoration:underline}
+@media (max-width:900px){.pills{grid-template-columns:1fr}}
+.pubs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.pubs h3{font:500 .72rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+@media (max-width:860px){.pubs{grid-template-columns:1fr;gap:36px}}
+.paths{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:8px}
+.path{background:var(--deep-2);border:1px solid rgba(255,255,255,.1);padding:24px}
+.path h3{font-size:1.25rem;font-weight:700;margin:0 0 8px;color:var(--on-deep)}
+.path p{margin:0 0 16px}
+@media (max-width:760px){.paths{grid-template-columns:1fr}}
+.contact-sec .mail{margin-top:36px}
+.speak-sec{background:var(--paper-2)}
+.speak-sec .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.topic-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.topic-list li{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--rule)}
+.topic-list li span:first-child{font-weight:500;flex:1 1 300px;min-width:0}
+.topic-list li span:last-child{font:500 .74rem var(--mono);color:var(--muted);letter-spacing:.06em}
+.speak-sec .bio{background:var(--deep)}
+@media (max-width:860px){.speak-sec .wrap{grid-template-columns:1fr;gap:32px}}
+
+.jobs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.job{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start;background:var(--paper);border:1px solid var(--rule);padding:20px}
+.job.example{border-style:dashed}
+.logo-slot{width:72px;height:72px;display:grid;place-items:center;text-align:center;background:var(--paper-2);border:1px solid var(--rule);font:600 .62rem var(--body);line-height:1.2;color:var(--muted);padding:6px}
+.job .meta{margin:0 0 4px;font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.job .firm{color:var(--brass-ink)}
+.job strong{display:block;font-family:var(--head);font-size:1.08rem;line-height:1.2}
+.job p:not(.meta){margin:6px 0 0;font-size:.9rem;color:var(--muted)}
+.job .ex{position:absolute;top:8px;right:10px;font:500 .62rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brass-ink)}
+@media (max-width:400px){.jobs{grid-template-columns:1fr}}
+
+/* v4: foto, percorso, muro loghi */
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 30%;filter:saturate(.9) contrast(1.03)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,22,49,.55));pointer-events:none}
+.photo .tag{z-index:1}
+.about .wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.about-side{position:sticky;top:96px}
+.about-side .edu{color:var(--muted);font-size:.95rem;margin-top:18px;padding-top:18px;border-top:1px solid var(--rule)}
+.about-side .lede{margin-top:22px}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr}.about-side{position:static}}
+.path-line{list-style:none;margin:0;padding:0 0 0 28px;position:relative;display:grid;gap:28px}
+.path-line::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--rule)}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--ledger)}
+.step.key::before,.step.now::before{background:var(--brass);border-color:var(--brass)}
+.step .when{margin:0 0 4px;font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brass-ink)}
+.step h3{font-size:1.35rem;font-weight:700;line-height:1.15;margin:0 0 8px}
+.step p{margin:0;max-width:62ch}
+.step ul:not(.roles){margin:12px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.step ul:not(.roles) li{padding-left:16px;position:relative;font-size:.95rem}
+.step ul:not(.roles) li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;background:var(--brass)}
+.step.key{background:var(--paper-2);padding:24px;margin-left:-8px;border-left:3px solid var(--brass)}
+.step.key::before{left:-22px;top:30px}
+.step.key h3{font-size:1.7rem}
+.step-photo .ph-slot{aspect-ratio:16/9;max-width:100%;background:linear-gradient(150deg,var(--deep-2),var(--deep));display:flex;align-items:flex-end;padding:14px;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-muted);border:1px dashed var(--rule)}
+.step-photo:not(.wide) .ph-slot{aspect-ratio:3/2;width:70%}
+@media (max-width:600px){.step-photo:not(.wide) .ph-slot{width:100%}}
+.logos.wall{grid-template-columns:repeat(5,minmax(0,1fr))}
+.logos.wall div{min-height:110px;font-size:1.05rem;color:var(--muted);transition:color .2s,background-color .2s}
+.logos.wall div:hover{color:var(--ink);background:var(--paper-2)}
+@media (max-width:860px){.logos.wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v5: collage foto nel percorso + lightbox */
+.collage{display:grid;gap:10px;grid-auto-flow:dense}
+.collage.c3{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:150px}
+.collage.c4{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:150px}
+.collage .ph{margin:0;position:relative;overflow:hidden;background:var(--paper-2)}
+.collage .ph.tall{grid-row:span 2}
+.collage .ph.wide{grid-column:span 2}
+.collage .zoom{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.collage .zoom:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.collage .ph:hover img{transform:scale(1.05)}
+.collage figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;font-size:.74rem;line-height:1.3;color:#fff;background:linear-gradient(transparent,rgba(6,14,32,.8));pointer-events:none}
+@media (max-width:600px){.collage.c3,.collage.c4{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:130px}}
+.quote{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center;background:var(--deep);color:var(--on-deep);padding:18px}
+.quote img{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover}
+.quote blockquote{margin:0}
+.quote p{font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.35;margin:0 0 8px;max-width:none}
+.quote cite{font-style:normal;font-size:.8rem;color:var(--on-deep-muted)}
+@media (max-width:520px){.quote{grid-template-columns:1fr}}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,12,10,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:82vh;object-fit:contain}
+.lb p{color:#e6ece9;font-size:.9rem;margin:12px 0 0;text-align:center}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:1rem;padding:6px 12px;cursor:pointer}
+.logos.wall{grid-template-columns:repeat(5,minmax(0,1fr))}
+
+/* v6: dashboard ESG su sfumatura blu */
+.dash{background:linear-gradient(180deg,#163a6b 0%,#1f4f8c 55%,#2c63a6 100%);color:var(--on-deep)}
+.dash .wrap{padding-block:64px 72px}
+.dash-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.dash-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff}
+.dash-head p{margin:0;max-width:52ch;color:#c9d6ea}
+.dash .kicker{color:var(--brass)}
+.stamp{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#c9d6ea;border:1px solid rgba(255,255,255,.25);padding:8px 12px;white-space:nowrap}
+.stamp time{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tile{background:rgba(6,14,34,.35);border:1px solid rgba(255,255,255,.12);padding:22px;display:flex;flex-direction:column;gap:8px;backdrop-filter:blur(2px);transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-3px);border-color:var(--brass)}
+.tile .tag{margin:0;font:500 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.tile b{font-family:var(--head);font-weight:800;font-stretch:118%;font-size:clamp(2.1rem,3.6vw,2.8rem);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.tile .lbl{margin:0;color:#d5e0f0;font-size:.93rem;flex:1}
+.tile .trend{margin:4px 0 0;font:600 .78rem var(--body);display:inline-block;align-self:flex-start;padding:3px 8px;border-radius:2px;background:rgba(255,255,255,.1);color:#fff}
+.tile .trend.up{background:rgba(201,162,74,.22);color:#f0d798}
+.tile .trend.down{background:rgba(255,255,255,.12);color:#ffd2c2}
+.tile a{font-size:.75rem;color:#b7c7df;text-decoration:none}
+.tile a:hover{text-decoration:underline}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<header class="top" id="hdr">
+  <div class="wrap">
+    <a class="mark" href="#top">Constantino <i>Christoyannis</i></a>
+    <nav class="links" aria-label="Sezioni">
+      <a href="#chi"><span lang="it">Chi sono</span><span lang="en">About</span></a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#advisory">Advisory</a>
+      <a href="#pillole"><span lang="it">Pillole ESG</span><span lang="en">ESG notes</span></a>
+      <a href="#pubblicazioni"><span lang="it">Pubblicazioni</span><span lang="en">Publications</span></a>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" id="btn-it" aria-pressed="true">IT</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+      <a class="book" href="#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero on-deep">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="kicker"><span lang="it">ESG · Credito · Filiere</span><span lang="en">ESG · Credit · Supply chains</span></p>
+        <h1 lang="it">L'ESG che si misura <span>crea valore.</span></h1>
+        <h1 lang="en">ESG you can measure <span>creates value.</span></h1>
+        <p class="thesis" lang="it">Aiuto imprese e investitori a trasformare l'ESG da obbligo a opportunità di crescita misurabile: accesso al credito, clienti, filiere.</p>
+        <p class="thesis" lang="en">I help companies and investors turn ESG from an obligation into measurable growth: access to credit, clients, supply chains.</p>
+        <div class="cta">
+          <a class="btn primary" href="#advisory">Advisory<span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="#chi"><span lang="it">Chi sono</span><span lang="en">About</span></a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="img/constantino.jpg" alt="Constantino Christoyannis durante un convegno" width="1020" height="1010">
+        <div class="tag"><small>Constantino Christoyannis</small><span>Advisory &amp; Strategic Growth Director, Tecno Group</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dash on-deep" id="dashboard">
+    <div class="wrap">
+      <div class="dash-head">
+        <div>
+          <p class="kicker"><span lang="it">Termometro ESG</span><span lang="en">ESG thermometer</span></p>
+          <h2 lang="it">La mia dashboard ESG</h2><h2 lang="en">My ESG dashboard</h2>
+          <p lang="it">I numeri che seguo per capire lo stato di salute dell'ESG: credito, rischio, imprese, fondi.</p>
+          <p lang="en">The figures I track to read the health of ESG: credit, risk, companies, funding.</p>
+        </div>
+        <p class="stamp"><span lang="it">Aggiornata al</span><span lang="en">Updated</span> <time datetime="2026-10-29">29.10.2026</time></p>
+      </div>
+      <div class="tiles">
+        <article class="tile rise"><p class="tag"><span lang="it">Credito</span><span lang="en">Credit</span></p><b><span lang="it">€32 mld</span><span lang="en">€32 bn</span></b><p class="lbl" lang="it">finanza sostenibile erogata da Deutsche Bank nel terzo trimestre</p><p class="lbl" lang="en">sustainable finance from Deutsche Bank in Q3</p><p class="trend up"><span lang="it">▲ +42% sul trimestre</span><span lang="en">▲ +42% q/q</span></p><a href="https://www.esgtoday.com/deutsche-bank-reports-record-e32-billion-sustainable-finance-quarter/" target="_blank" rel="noopener">ESG Today, 28.10.2026 ↗</a></article>
+        <article class="tile rise"><p class="tag"><span lang="it">Credito</span><span lang="en">Credit</span></p><b><span lang="it">2026</span><span lang="en">2026</span></b><p class="lbl" lang="it">le banche valutano i rischi ESG nel credito; le banche più piccole entro gennaio 2027</p><p class="lbl" lang="en">banks assess ESG risk in lending; smaller banks by January 2027</p><p class="trend flat"><span lang="it">Linee guida EBA</span><span lang="en">EBA guidelines</span></p><a href="https://www.ecosostenibile.eu/blog/linee-guida-eba-rischi-esg-credito-bancario/" target="_blank" rel="noopener">EBA ↗</a></article>
+        <article class="tile rise"><p class="tag"><span lang="it">Rischio</span><span lang="en">Risk</span></p><b><span lang="it">36,6%</span><span lang="en">36.6%</span></b><p class="lbl" lang="it">delle PMI italiane è ad alto rischio climatico fisico</p><p class="lbl" lang="en">of Italian SMEs face high physical climate risk</p><p class="trend down"><span lang="it">Italia paese UE più colpito</span><span lang="en">Italy hardest hit in the EU</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile rise"><p class="tag"><span lang="it">Imprese</span><span lang="en">Companies</span></p><b><span lang="it">91%</span><span lang="en">91%</span></b><p class="lbl" lang="it">delle imprese che vedono la transizione come opportunità non ha un piano concreto</p><p class="lbl" lang="en">of companies that see the transition as an opportunity have no concrete plan</p><p class="trend down"><span lang="it">Il divario da colmare</span><span lang="en">The gap to close</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile rise"><p class="tag"><span lang="it">Fondi</span><span lang="en">Funding</span></p><b><span lang="it">€30 mld</span><span lang="en">€30 bn</span></b><p class="lbl" lang="it">di fondi BEI per l'adattamento climatico entro il 2030, anche per le imprese più piccole</p><p class="lbl" lang="en">in EIB funding for climate adaptation by 2030, including smaller firms</p><p class="trend up"><span lang="it">▲ Raddoppiati</span><span lang="en">▲ Doubled</span></p><a href="https://esgnews.it/finanza/banche/bei-raddoppiano-i-fondi-per-ladattamento-climatico-30-miliardi-entro-il-2030/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile rise"><p class="tag"><span lang="it">Valore</span><span lang="en">Value</span></p><b><span lang="it">+13%</span><span lang="en">+13%</span></b><p class="lbl" lang="it">di fatturato stimato per le società benefit rispetto a imprese simili</p><p class="lbl" lang="en">estimated revenue for benefit corporations versus similar firms</p><p class="trend up"><span lang="it">▲ Lo scopo paga</span><span lang="en">▲ Purpose pays</span></p><a href="https://esgnews.it/aziende/societa-benefit-la-sostenibilita-premia-la-crescita-fatturato-piu-alto-del-13-rispetto-alle-altre-imprese/" target="_blank" rel="noopener">ESG News, 27.10.2026 ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about" id="chi">
+    <div class="wrap">
+      <div class="about-side rise">
+        <p class="kicker"><span lang="it">Chi sono</span><span lang="en">About</span></p>
+        <h2 lang="it">Istituzioni, diritto e imprese: un percorso sul campo.</h2>
+        <h2 lang="en">Institutions, law and business: a path built in the field.</h2>
+        <p class="lede" lang="it">L'ESG non è solo un costo o un obbligo di conformità: è efficienza dei processi, accesso al credito e crescita dei ricavi. Il mio lavoro è dimostrarlo con i numeri.</p>
+        <p class="lede" lang="en">ESG is not just a cost or a compliance obligation: it means more efficient processes, better access to credit and revenue growth. My job is to prove it with numbers.</p>
+        <p class="edu" lang="it">Formazione da giurista ed economista: MBA all'Imperial College, LUISS, Università di Perugia. Già docente di Metrics of Sustainable Impact (NABA).</p>
+        <p class="edu" lang="en">Trained in law and economics: MBA from Imperial College, LUISS, University of Perugia. Former lecturer in Sustainable Impact Metrics (NABA).</p>
+      </div>
+      <ol class="path-line">
+        <li class="step rise">
+          <p class="when" lang="it">Le basi</p><p class="when" lang="en">Foundations</p>
+          <h3 lang="it">Avvocato e console di Grecia a Perugia</h3><h3 lang="en">Lawyer and Consul of Greece in Perugia</h3>
+          <p lang="it">Ho iniziato dal diritto e dalle istituzioni: come nascono le regole, come si costruisce un rapporto tra amministrazioni, imprese e comunità.</p>
+          <p lang="en">I started with law and institutions: how rules are made, and how relationships between public bodies, companies and communities are built.</p>
+        </li>
+        <li class="collage c3 rise"><figure class="ph tall"><button type="button" class="zoom" data-src="img/avvocato.jpg" aria-label="Ingrandisci"><img src="img/avvocato.jpg" alt="Gli anni da avvocato" loading="lazy"></button><figcaption><span lang="it">Gli anni da avvocato</span><span lang="en">My years as a lawyer</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-tgr.jpg" aria-label="Ingrandisci"><img src="img/consul-tgr.jpg" alt="Intervista al TGR come console di Grecia a Perugia" loading="lazy"></button><figcaption><span lang="it">Intervista al TGR come console di Grecia a Perugia</span><span lang="en">TGR interview as Consul of Greece in Perugia</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-convegno.jpg" aria-label="Ingrandisci"><img src="img/consul-convegno.jpg" alt="Convegno a Perugia, anni da console" loading="lazy"></button><figcaption><span lang="it">Convegno a Perugia, anni da console</span><span lang="en">Conference in Perugia, consular years</span></figcaption></figure></li>
+        <li class="step rise">
+          <p class="when" lang="it">La governance dall'interno</p><p class="when" lang="en">Governance from the inside</p>
+          <h3 lang="it">Consiglio di amministrazione del Porto di Salonicco</h3><h3 lang="en">Board of Directors, Port of Thessaloniki</h3>
+          <p lang="it">Sedere in un consiglio di amministrazione mi ha insegnato che la sostenibilità si decide lì: rischi, investimenti, rapporti con investitori e territorio.</p>
+          <p lang="en">Sitting on a board taught me that sustainability is decided there: risks, investments, relations with investors and the local area.</p>
+        </li>
+        <li class="step key rise">
+          <p class="when" lang="it">Dove nasce la consulenza ESG</p><p class="when" lang="en">Where my ESG advisory began</p>
+          <h3>Grant Thornton</h3>
+          <p lang="it">Qui ho imparato il mestiere. Ho accompagnato le imprese nei bilanci di sostenibilità, nei report integrati e nelle DNF secondo GRI, &lt;IR&gt; Framework e SASB.</p>
+          <p lang="en">This is where I learned the craft. I supported companies on sustainability reports, integrated reports and non-financial statements under GRI, the &lt;IR&gt; Framework and SASB.</p>
+          <ul lang="it"><li>Stakeholder engagement, analisi di materialità e definizione dei KPI</li><li>Strumenti di raccolta e verifica dei dati di sostenibilità</li><li>Integrazione dell'ESG nella strategia aziendale e modelli di Creazione di Valore Condiviso</li></ul>
+          <ul lang="en"><li>Stakeholder engagement, materiality analysis and KPI definition</li><li>Tools to collect and check sustainability data</li><li>Embedding ESG in corporate strategy and Creating Shared Value models</li></ul>
+        </li>
+        <li class="step rise">
+          <p class="when" lang="it">La scala</p><p class="when" lang="en">Scale</p>
+          <h3>KPMG</h3>
+          <p lang="it">Ho guidato incarichi di rendicontazione e assurance di sostenibilità per gruppi italiani e internazionali, coordinando un team di circa 30 persone, e sono stato vice coordinatore dei GHG Champions.</p>
+          <p lang="en">I led sustainability reporting and assurance engagements for Italian and international groups, managing a team of about 30 people, and served as Vice Coordinator of the GHG Champions.</p>
+        </li>
+        <li class="collage c4 rise"><figure class="ph tall"><button type="button" class="zoom" data-src="img/kpmg-pietrarsa.jpg" aria-label="Ingrandisci"><img src="img/kpmg-pietrarsa.jpg" alt="Con il team KPMG al Museo di Pietrarsa" loading="lazy"></button><figcaption><span lang="it">Con il team KPMG al Museo di Pietrarsa</span><span lang="en">With the KPMG team at the Pietrarsa Museum</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/gse.jpg" aria-label="Ingrandisci"><img src="img/gse.jpg" alt="Convegno con il GSE" loading="lazy"></button><figcaption><span lang="it">Convegno con il GSE</span><span lang="en">Conference with GSE</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/enel.jpg" aria-label="Ingrandisci"><img src="img/enel.jpg" alt="In visita a un impianto Enel" loading="lazy"></button><figcaption><span lang="it">In visita a un impianto Enel</span><span lang="en">Visiting an Enel plant</span></figcaption></figure></li>
+        <li class="step now rise">
+          <p class="when" lang="it">Oggi</p><p class="when" lang="en">Today</p>
+          <h3>Tecno Group</h3>
+          <p lang="it">Come Advisory &amp; Strategic Growth Director porto questa esperienza a imprese e investitori, e sono l'interlocutore del loro top management, delle banche e degli investitori sui temi di sostenibilità.</p>
+          <p lang="en">As Advisory &amp; Strategic Growth Director I bring this experience to companies and investors, as the counterpart for their top management, banks and investors on sustainability.</p>
+          <ul class="roles" lang="it">
+            <li>Commissione ESG, Sviluppo Sostenibile e Corporate Reporting<span>ODCEC Roma, uditore dal 2023</span></li>
+            <li>Gruppo Tecnico Strategia ESG per le PMI<span>Unindustria Lazio, membro dal 2025</span></li>
+          </ul>
+          <ul class="roles" lang="en">
+            <li>ESG, Sustainable Development and Corporate Reporting Committee<span>Rome Order of Chartered Accountants, observer since 2023</span></li>
+            <li>ESG Strategy for SMEs Technical Group<span>Unindustria Lazio, member since 2025</span></li>
+          </ul>
+        </li>
+        <li class="collage c3 rise"><figure class="ph wide"><button type="button" class="zoom" data-src="img/laquila.jpg" aria-label="Ingrandisci"><img src="img/laquila.jpg" alt=""Rapporto banca-impresa", Confindustria L'Aquila, 12.05.2026" loading="lazy"></button><figcaption><span lang="it">"Rapporto banca-impresa", Confindustria L'Aquila, 12.05.2026</span><span lang="en">"Bank-business relationship", Confindustria L'Aquila, 12.05.2026</span></figcaption></figure><figure class="ph tall"><button type="button" class="zoom" data-src="img/unint.jpg" aria-label="Ingrandisci"><img src="img/unint.jpg" alt="In aula all'UNINT, Roma" loading="lazy"></button><figcaption><span lang="it">In aula all'UNINT, Roma</span><span lang="en">Teaching at UNINT, Rome</span></figcaption></figure><figure class="ph"><button type="button" class="zoom" data-src="img/teramo.jpg" aria-label="Ingrandisci"><img src="img/teramo.jpg" alt="ODCEC Teramo, 22.05.2026" loading="lazy"></button><figcaption><span lang="it">ODCEC Teramo, 22.05.2026</span><span lang="en">ODCEC Teramo, 22.05.2026</span></figcaption></figure><figure class="ph"><button type="button" class="zoom" data-src="img/kpmg-tecno-ucl.jpg" aria-label="Ingrandisci"><img src="img/kpmg-tecno-ucl.jpg" alt="Osservatorio con KPMG, Tecno e UCL School of Management" loading="lazy"></button><figcaption><span lang="it">Osservatorio con KPMG, Tecno e UCL School of Management</span><span lang="en">Observatory with KPMG, Tecno and UCL School of Management</span></figcaption></figure></li><li class="quote rise"><img src="img/teramo-targa.jpg" alt="Targa dell'Ordine dei Commercialisti di Teramo" loading="lazy"><blockquote><p lang="it">«In segno di profonda stima e ringraziamento per l'autorevole e prezioso intervento formativo»</p><p lang="en">"In deep esteem and gratitude for an authoritative and valuable training contribution"</p><cite lang="it">Ordine e Fondazione dei Dottori Commercialisti di Teramo, «Laboratorio sulla rendicontazione e attestazione di sostenibilità», 22 maggio 2026</cite><cite lang="en">Teramo Order and Foundation of Chartered Accountants, workshop on sustainability reporting and assurance, 22 May 2026</cite></blockquote></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec topics-sec" id="advisory">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <div>
+          <p class="kicker">Advisory</p>
+          <h2 lang="it">Le aree in cui lavoro con imprese e investitori.</h2>
+          <h2 lang="en">Where I work with companies and investors.</h2>
+        </div>
+        <p lang="it">Per PMI, mid-cap e investitori. Dalla strategia ai dati che chiedono banche, clienti e norme.</p>
+        <p lang="en">For SMEs, mid-caps and investors. From strategy to the data that banks, clients and regulators ask for.</p>
+      </div>
+      <div class="svc">
+        <div class="card rise"><span class="n">01</span>
+          <h3 lang="it">Strategia ESG e accesso al credito</h3><h3 lang="en">ESG strategy and access to credit</h3>
+          <p lang="it">Un piano ESG legato al business, da presentare a banche, investitori e grandi clienti.</p><p lang="en">An ESG plan tied to the business, ready for banks, investors and large clients.</p>
+          <ul lang="it"><li>Analisi di materialità e definizione dei KPI</li><li>Dati ESG per l'affidamento e il dialogo con le banche</li><li>Rating e certificazioni ESG</li></ul>
+          <ul lang="en"><li>Materiality analysis and KPI definition</li><li>ESG data for credit applications and bank dialogue</li><li>ESG ratings and certifications</li></ul></div>
+        <div class="card rise"><span class="n">02</span>
+          <h3 lang="it">Rendicontazione pronta per l'assurance</h3><h3 lang="en">Assurance-ready reporting</h3>
+          <p lang="it">Report di sostenibilità solidi, obbligatori o volontari, che reggono la verifica.</p><p lang="en">Robust sustainability reports, mandatory or voluntary, that stand up to review.</p>
+          <ul lang="it"><li>ESRS, standard volontario PMI, GRI</li><li>Sistemi di raccolta e controllo dei dati</li><li>Preparazione all'assurance limitata e ragionevole</li></ul>
+          <ul lang="en"><li>ESRS, voluntary SME standard, GRI</li><li>Data collection and control systems</li><li>Readiness for limited and reasonable assurance</li></ul></div>
+        <div class="card rise"><span class="n">03</span>
+          <h3 lang="it">Filiera e fornitori</h3><h3 lang="en">Supply chain</h3>
+          <p lang="it">Rispondere ai requisiti ESG dei grandi clienti, o chiederli bene ai propri fornitori.</p><p lang="en">Meeting large clients' ESG requirements, or asking your own suppliers the right questions.</p>
+          <ul lang="it"><li>Strategie, politiche e piani di audit ESG per la supply chain</li><li>Questionari e valutazione dei fornitori</li><li>Assessment ESG di filiera</li></ul>
+          <ul lang="en"><li>ESG strategies, policies and audit plans for the supply chain</li><li>Supplier questionnaires and assessment</li><li>Supply-chain ESG assessments</li></ul></div>
+        <div class="card rise"><span class="n">04</span>
+          <h3 lang="it">Decarbonizzazione e ritorno degli investimenti</h3><h3 lang="en">Decarbonisation and return on investment</h3>
+          <p lang="it">Dal costo all'investimento: metriche che un CFO può portare in consiglio.</p><p lang="en">From cost to investment: metrics a CFO can take to the board.</p>
+          <ul lang="it"><li>Inventario delle emissioni e piano di riduzione</li><li>Efficienza energetica e ambientale</li><li>Misura dell'impatto e del ritorno degli investimenti sostenibili</li></ul>
+          <ul lang="en"><li>Emissions inventory and reduction plan</li><li>Energy and environmental efficiency</li><li>Measuring the impact and return of sustainable investments</li></ul></div>
+      </div>
+      <div class="tecno rise">
+        <p lang="it"><b>Oggi svolgo questa attività in Tecno Group</b>, come Advisory &amp; Strategic Growth Director.</p>
+        <p lang="en"><b>I currently do this work at Tecno Group</b>, as Advisory &amp; Strategic Growth Director.</p>
+      </div>
+
+      <div class="with rise">
+        <h3 lang="it">Le principali organizzazioni che ho accompagnato nel percorso ESG</h3>
+        <h3 lang="en">Leading organisations I have supported on their ESG journey</h3>
+        <div class="logos wall"><div>Enel</div><div>Leonardo</div><div>Ferrovie dello Stato</div><div>Avio</div><div>Coricelli</div><div>Camst</div><div>Sogei</div><div>Caltagirone Editore</div><div>Gruppo Rai</div><div>acquevenete</div><div>Yokohama TWS</div><div>FITAV</div><div>FIDAL</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pillole">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <div>
+          <p class="kicker"><span lang="it">Pillole ESG</span><span lang="en">ESG notes</span></p>
+          <h2 lang="it">Le notizie della settimana, lette in chiave di valore.</h2>
+          <h2 lang="en">This week's news, read for business value.</h2>
+        </div>
+        <p lang="it">Due volte a settimana su LinkedIn. Qui le ultime tre.</p>
+        <p lang="en">Twice a week on LinkedIn. The latest three are here.</p>
+      </div>
+      <div class="pills">
+        <article class="pill rise">
+          <time datetime="2026-10-29">29.10.2026</time>
+          <h3 lang="it">No, Bruxelles non ha fissato nuovi limiti di temperatura</h3><h3 lang="en">No, Brussels has not set new temperature limits</h3>
+          <p lang="it">1,5°C, 2°C e 3°C sono lo scenario su cui pianificare, non obiettivi. Intanto il 91% delle imprese non ha un piano concreto.</p>
+          <p lang="en">1.5°C, 2°C and 3°C are the planning baseline, not targets. Meanwhile 91% of companies have no concrete plan.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+        <article class="pill rise">
+          <time datetime="2026-10-27">27.10.2026</time>
+          <h3 lang="it">L'IA non è un'alternativa all'ESG: è la G di ESG</h3><h3 lang="en">AI is not an alternative to ESG: it is the G in ESG</h3>
+          <p lang="it">Ralph Lauren toglie la sostenibilità dai bonus, Hyundai la porta nella filiera. Integrare vuol dire continuare a misurare.</p>
+          <p lang="en">Ralph Lauren drops sustainability from bonuses, Hyundai takes it into its supply chain. Embedding means you keep measuring.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+        <article class="pill rise">
+          <time datetime="2026-10-22">22.10.2026</time>
+          <h3 lang="it">Le banche prestano per la transizione. Ma ognuna fa domande diverse</h3><h3 lang="en">Banks are lending for the transition. But each asks different questions</h3>
+          <p lang="it">Più credito ESG e stress test climatici dal 2027: serve una metodologia comune per non far compilare alle PMI tre questionari uguali.</p>
+          <p lang="en">More ESG credit and climate stress tests from 2027: a common method would spare SMEs filling in the same questionnaire three times.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec topics-sec" id="pubblicazioni">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <div>
+          <p class="kicker"><span lang="it">Pubblicazioni e interventi</span><span lang="en">Publications and talks</span></p>
+          <h2 lang="it">Sul palco, in aula e su carta.</h2>
+          <h2 lang="en">On stage, in class and in print.</h2>
+        </div>
+      </div>
+      <div class="pubs">
+        <div class="rise">
+          <h3 lang="it">Pubblicazioni</h3><h3 lang="en">Publications</h3>
+          <ul class="more">
+            <li><time>KPMG · Unindustria</time><div><strong lang="it">ESG Assessment della filiera meccatronica</strong><strong lang="en">ESG Assessment of the mechatronics supply chain</strong><span lang="it">Coautore</span><span lang="en">Co-author</span></div></li>
+            <li><time datetime="2024-02-21">21.02.2024</time><div><strong lang="it">Documento strategico di Umbria Aerospace Cluster</strong><strong lang="en">Umbria Aerospace Cluster strategy paper</strong><span>Confindustria Umbria</span></div></li>
+            <li><time>PMI</time><div><strong lang="it">Vademecum ESG per Piccole e Medie Imprese</strong><strong lang="en">ESG handbook for small and medium enterprises</strong><span lang="it">Guida pratica</span><span lang="en">Practical guide</span></div></li>
+          </ul>
+        </div>
+        <div class="rise">
+          <h3 lang="it">Conferenze principali</h3><h3 lang="en">Main conferences</h3>
+          <ul class="more">
+            <li><time datetime="2026-09">09.2026</time><div><strong>Euronext Sustainability Week</strong><span lang="it">Relatore</span><span lang="en">Speaker</span></div></li>
+            <li><time datetime="2026-05-22">22.05.2026</time><div><strong lang="it">Laboratorio sulla rendicontazione e attestazione di sostenibilità</strong><strong lang="en">Workshop on sustainability reporting and assurance</strong><span lang="it">Ordine e Fondazione dei Dottori Commercialisti di Teramo</span><span lang="en">Teramo Order of Chartered Accountants</span></div></li>
+            <li><time datetime="2026-05-12">12.05.2026</time><div><strong lang="it">"Rapporto banca-impresa", Confindustria L'Aquila</strong><strong lang="en">"Bank-business relationship", Confindustria L'Aquila</strong><span lang="it">Con il vicepresidente nazionale di Confindustria e la presidente di ABI Abruzzo</span><span lang="en">With Confindustria's national vice-president and the president of ABI Abruzzo</span></div></li>
+            <li><time datetime="2025-05-06">06.05.2025</time><div><strong>Audit &amp; ESG Assurance, UNINT</strong><span lang="it">Università degli Studi Internazionali di Roma</span><span lang="en">UNINT University, Rome</span></div></li>
+            <li><time>MEF · ABI · ODCEC</time><div><strong lang="it">Formazione ESG per istituzioni e ordini professionali</strong><strong lang="en">ESG training for institutions and professional bodies</strong><span lang="it">Anche AIAS e Unindustria</span><span lang="en">Also AIAS and Unindustria</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec book-sec contact-sec on-deep" id="contatti">
+    <div class="wrap">
+      <div class="rise">
+        <p class="kicker"><span lang="it">Contatti</span><span lang="en">Contact</span></p>
+        <h2 lang="it">Parliamone.</h2>
+        <h2 lang="en">Let's talk.</h2>
+        <p lang="it">Rispondo entro due giorni lavorativi.</p>
+        <p lang="en">I reply within two working days.</p>
+        <p class="mail" id="addr">c.christoyannis@gmail.com</p>
+        <div class="row">
+          <button type="button" class="copy" id="copy-mail"><span lang="it">Copia indirizzo</span><span lang="en">Copy address</span></button>
+          <a class="btn ghost" href="https://www.linkedin.com/in/constantino-christoyannis/" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="paths rise">
+        <div class="path">
+          <h3 lang="it">Collaborazioni</h3><h3 lang="en">Collaborations</h3>
+          <p lang="it">Progetti, ricerca, tavoli di lavoro, articoli. Scrivimi di cosa si tratta.</p>
+          <p lang="en">Projects, research, working groups, articles. Tell me what you have in mind.</p>
+        </div>
+        <div class="path">
+          <h3 lang="it">Per gli organizzatori</h3><h3 lang="en">For organisers</h3>
+          <p lang="it">Convegni, seminari con crediti formativi, workshop. Indicami data, platea e tema.</p>
+          <p lang="en">Conferences, accredited seminars, workshops. Send me the date, audience and topic.</p>
+          <button type="button" class="copy" id="copy-bio"><span lang="it">Copia la biografia breve</span><span lang="en">Copy short bio</span></button>
+          <p id="bio-it" lang="it" hidden>Constantino Christoyannis è Advisory &amp; Strategic Growth Director di Tecno Group. Aiuta imprese e investitori a trasformare l'ESG da obbligo a opportunità di crescita misurabile. Ha lavorato come avvocato e poi in Grant Thornton e KPMG, dove ha guidato incarichi di rendicontazione e assurance di sostenibilità. Ha insegnato Metrics of Sustainable Impact ed è relatore e formatore per MEF, ABI, ordini dei commercialisti e Unindustria.</p>
+          <p id="bio-en" lang="en" hidden>Constantino Christoyannis is Advisory &amp; Strategic Growth Director at Tecno Group. He helps companies and investors turn ESG from an obligation into measurable growth. He worked as a lawyer and then at Grant Thornton and KPMG, where he led sustainability reporting and assurance engagements. He has taught Sustainable Impact Metrics and speaks and trains for MEF, ABI, chartered accountants' orders and Unindustria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lb" id="lb" hidden><button type="button" id="lb-close">✕</button><figure style="margin:0;text-align:center"><img id="lb-img" alt=""><p id="lb-cap"></p></figure></div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Constantino Christoyannis</span>
+    <span lang="it">Questo sito non usa cookie né strumenti di tracciamento.</span>
+    <span lang="en">This site uses no cookies or tracking.</span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var body=document.body, root=document.documentElement, it=document.getElementById('btn-it'), en=document.getElementById('btn-en');
+  root.classList.add('js');
+  function set(l){
+    var isEn=l==='en';
+    body.classList.toggle('is-en',isEn);
+    root.lang=isEn?'en':'it';
+    it.setAttribute('aria-pressed',String(!isEn)); en.setAttribute('aria-pressed',String(isEn));
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var start='it';
+  if(location.hash==='#en') start='en';
+  else { try{ if(localStorage.getItem('lang')==='en') start='en'; }catch(e){} }
+  set(start);
+  it.addEventListener('click',function(){set('it')});
+  en.addEventListener('click',function(){set('en')});
+
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
+
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rise').forEach(function(el){io.observe(el)});
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return; so.unobserve(e.target);
+      var el=e.target, n=+el.dataset.count, pre=el.dataset.prefix||'', suf=el.dataset.suffix||'', t0=performance.now();
+      (function step(t){var k=Math.min(1,(t-t0)/1100), v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=pre+v+suf;if(k<1)requestAnimationFrame(step)})(t0);
+    })},{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){so.observe(el)});
+  } else {
+    document.querySelectorAll('.rise').forEach(function(el){el.classList.add('in')});
+  }
+
+  function copy(btn,getText){
+    btn.addEventListener('click',function(){
+      var t=getText(), label=btn.innerHTML;
+      function done(){btn.textContent=body.classList.contains('is-en')?'Copied':'Copiato';setTimeout(function(){btn.innerHTML=label},1600)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel()})} else sel();
+    });
+  }
+  function sel(){var el=document.getElementById('addr'),r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  copy(document.getElementById('copy-bio'),function(){return document.getElementById(body.classList.contains('is-en')?'bio-en':'bio-it').textContent});
+  copy(document.getElementById('copy-mail'),function(){return document.getElementById('addr').textContent});
+  var lb=document.getElementById('lb'),lbi=document.getElementById('lb-img'),lbc=document.getElementById('lb-cap');
+  document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){
+    lbi.src=b.dataset.src; var c=b.parentNode.querySelector(body.classList.contains('is-en')?'[lang=en]':'[lang=it]'); lbc.textContent=c?c.textContent:''; lbi.alt=lbc.textContent; lb.hidden=false;})});
+  function closeLb(){lb.hidden=true}
+  lb.addEventListener('click',closeLb); addEventListener('keydown',function(e){if(e.key==='Escape')closeLb()});
+})();
+</script>
+
+</body>
+</html>
