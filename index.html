@@ -736,8 +736,8 @@ footer a{color:var(--on-deep-muted)}
 <footer>
   <div class="wrap">
     <span>© 2026 Constantino Christoyannis</span>
-    <span lang="it">Questo sito non usa cookie né strumenti di tracciamento. <a href="privacy.html" style="color:inherit">Informativa privacy</a></span>
-    <span lang="en">This site uses no cookies or tracking. <a href="privacy.html#en" style="color:inherit">Privacy notice</a></span>
+    <span lang="it">Questo sito non usa cookie: solo statistiche di visita anonime e aggregate. <a href="privacy.html" style="color:inherit">Informativa privacy</a></span>
+    <span lang="en">This site uses no cookies, only anonymous, aggregate visit statistics. <a href="privacy.html#en" style="color:inherit">Privacy notice</a></span>
   </div>
 </footer>
 
@@ -794,5 +794,7 @@ footer a{color:var(--on-deep-muted)}
 })();
 </script>
 
+<script>/* statistiche anonime GoatCounter, solo sul sito pubblicato */
+if(/(^|\.)christoyannis\.com$|github\.io$/.test(location.hostname)){var g=document.createElement('script');g.async=true;g.src='https://gc.zgo.at/count.js';g.dataset.goatcounter='https://cchristoyannis.goatcounter.com/count';document.body.appendChild(g)}</script>
 </body>
 </html>
