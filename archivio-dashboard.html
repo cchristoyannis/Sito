@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivio dashboard ESG · Constantino Christoyannis</title>
+<meta name="description" content="Tutte le edizioni della dashboard ESG di Constantino Christoyannis: i numeri che segue settimana dopo settimana su credito, rischio, imprese e fondi.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Spectral:ital,wght@1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --deep:#0a1631; --deep-2:#173561; --on-deep:#eef2f8; --on-deep-muted:#a9b8d2;
+  --paper:#ffffff; --paper-2:#f1f4f9; --ink:#121c2e; --muted:#5a6578; --rule:#d8dfe9;
+  --brass:#c9a24a; --brass-ink:#7a5c1c; --ledger:#1d4e89;
+  --head:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Spectral", Georgia, serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:#163a6b;color:var(--on-deep);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--head);font-stretch:112%;letter-spacing:-.015em;margin:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+body:not(.is-en) [lang="en"]{display:none!important}
+body.is-en [lang="it"]{display:none!important}
+.kicker{font:500 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+header.top{background:var(--deep)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.back{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep);text-decoration:none}
+.back:hover{color:var(--brass)}
+.lang{display:flex;gap:2px}
+.lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
+.lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
+.dash{background:linear-gradient(180deg,#163a6b 0%,#1f4f8c 55%,#2c63a6 100%);color:var(--on-deep)}
+.dash .wrap{padding-block:64px 72px}
+.dash-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.dash-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff}
+.dash-head p{margin:0;max-width:52ch;color:#c9d6ea}
+.dash .kicker{color:var(--brass)}
+.stamp{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#c9d6ea;border:1px solid rgba(255,255,255,.25);padding:8px 12px;white-space:nowrap}
+.stamp time{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tile{background:rgba(6,14,34,.35);border:1px solid rgba(255,255,255,.12);padding:22px;display:flex;flex-direction:column;gap:8px;backdrop-filter:blur(2px);transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-3px);border-color:var(--brass)}
+.tile .tag{margin:0;font:500 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.tile b{font-family:var(--head);font-weight:800;font-stretch:118%;font-size:clamp(2.1rem,3.6vw,2.8rem);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.tile .lbl{margin:0;color:#d5e0f0;font-size:.93rem;flex:1}
+.tile .trend{margin:4px 0 0;font:600 .78rem var(--body);display:inline-block;align-self:flex-start;padding:3px 8px;border-radius:2px;background:rgba(255,255,255,.1);color:#fff}
+.tile .trend.up{background:rgba(201,162,74,.22);color:#f0d798}
+.tile .trend.down{background:rgba(255,255,255,.12);color:#ffd2c2}
+.tile a{font-size:.75rem;color:#b7c7df;text-decoration:none}
+.tile a:hover{text-decoration:underline}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+.dash{min-height:100vh}
+.ed{margin-top:48px}
+.ed:first-of-type{margin-top:0}
+.ed-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.ed-head h2{font-size:1.35rem;font-weight:700;color:#fff}
+.ed-head .now{font:500 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#0a1631;background:var(--brass);padding:3px 8px}
+footer{background:var(--deep);color:var(--on-deep-muted);font-size:.85rem}
+footer .wrap{padding-block:24px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="back" href="./#dashboard">← <span lang="it">Torna al sito</span><span lang="en">Back to the site</span></a>
+  <div class="lang" role="group" aria-label="Lingua / Language"><button type="button" id="btn-it" aria-pressed="true">IT</button><button type="button" id="btn-en" aria-pressed="false">EN</button></div>
+</div></header>
+<main class="dash">
+  <div class="wrap">
+    <div class="dash-head">
+      <div>
+        <p class="kicker"><span lang="it">Termometro ESG</span><span lang="en">ESG thermometer</span></p>
+        <h1 class="h" lang="it" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff">Archivio della dashboard ESG</h1>
+        <h1 class="h" lang="en" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff">ESG dashboard archive</h1>
+        <p lang="it">Tutte le edizioni, dalla più recente. Ogni settimana aggiorno i numeri che seguo: qui puoi vedere come cambiano nel tempo.</p>
+        <p lang="en">Every edition, newest first. I update the figures I track every week: here you can see how they change over time.</p>
+      </div>
+    </div>
+    <!-- EDIZIONI: la più recente in alto. Ogni venerdì aggiungere una nuova <section class="ed"> qui sotto e spostare il badge "now". -->
+    <section class="ed" id="ed-2026-10-29">
+      <div class="ed-head"><h2><time datetime="2026-10-29">29.10.2026</time></h2><span class="now"><span lang="it">In corso</span><span lang="en">Current</span></span></div>
+      <div class="tiles">
+        <article class="tile"><p class="tag"><span lang="it">Credito</span><span lang="en">Credit</span></p><b><span lang="it">€32 mld</span><span lang="en">€32 bn</span></b><p class="lbl" lang="it">finanza sostenibile erogata da Deutsche Bank nel terzo trimestre</p><p class="lbl" lang="en">sustainable finance from Deutsche Bank in Q3</p><p class="trend up"><span lang="it">▲ +42% sul trimestre</span><span lang="en">▲ +42% q/q</span></p><a href="https://www.esgtoday.com/deutsche-bank-reports-record-e32-billion-sustainable-finance-quarter/" target="_blank" rel="noopener">ESG Today, 28.10.2026 ↗</a></article>
+        <article class="tile"><p class="tag"><span lang="it">Credito</span><span lang="en">Credit</span></p><b><span lang="it">2026</span><span lang="en">2026</span></b><p class="lbl" lang="it">le banche valutano i rischi ESG nel credito; le banche più piccole entro gennaio 2027</p><p class="lbl" lang="en">banks assess ESG risk in lending; smaller banks by January 2027</p><p class="trend flat"><span lang="it">Linee guida EBA</span><span lang="en">EBA guidelines</span></p><a href="https://www.ecosostenibile.eu/blog/linee-guida-eba-rischi-esg-credito-bancario/" target="_blank" rel="noopener">EBA ↗</a></article>
+        <article class="tile"><p class="tag"><span lang="it">Rischio</span><span lang="en">Risk</span></p><b><span lang="it">36,6%</span><span lang="en">36.6%</span></b><p class="lbl" lang="it">delle PMI italiane è ad alto rischio climatico fisico</p><p class="lbl" lang="en">of Italian SMEs face high physical climate risk</p><p class="trend down"><span lang="it">Italia paese UE più colpito</span><span lang="en">Italy hardest hit in the EU</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile"><p class="tag"><span lang="it">Imprese</span><span lang="en">Companies</span></p><b><span lang="it">91%</span><span lang="en">91%</span></b><p class="lbl" lang="it">delle imprese che vedono la transizione come opportunità non ha un piano concreto</p><p class="lbl" lang="en">of companies that see the transition as an opportunity have no concrete plan</p><p class="trend down"><span lang="it">Il divario da colmare</span><span lang="en">The gap to close</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile"><p class="tag"><span lang="it">Fondi</span><span lang="en">Funding</span></p><b><span lang="it">€30 mld</span><span lang="en">€30 bn</span></b><p class="lbl" lang="it">di fondi BEI per l'adattamento climatico entro il 2030, anche per le imprese più piccole</p><p class="lbl" lang="en">in EIB funding for climate adaptation by 2030, including smaller firms</p><p class="trend up"><span lang="it">▲ Raddoppiati</span><span lang="en">▲ Doubled</span></p><a href="https://esgnews.it/finanza/banche/bei-raddoppiano-i-fondi-per-ladattamento-climatico-30-miliardi-entro-il-2030/" target="_blank" rel="noopener">ESG News, 23.10.2026 ↗</a></article>
+        <article class="tile"><p class="tag"><span lang="it">Valore</span><span lang="en">Value</span></p><b><span lang="it">+13%</span><span lang="en">+13%</span></b><p class="lbl" lang="it">di fatturato stimato per le società benefit rispetto a imprese simili</p><p class="lbl" lang="en">estimated revenue for benefit corporations versus similar firms</p><p class="trend up"><span lang="it">▲ Lo scopo paga</span><span lang="en">▲ Purpose pays</span></p><a href="https://esgnews.it/aziende/societa-benefit-la-sostenibilita-premia-la-crescita-fatturato-piu-alto-del-13-rispetto-alle-altre-imprese/" target="_blank" rel="noopener">ESG News, 27.10.2026 ↗</a></article>
+      </div>
+    </section>
+  </div>
+</main>
+<footer><div class="wrap">© 2026 Constantino Christoyannis · <a href="privacy.html">Privacy</a></div></footer>
+<script>
+(function(){
+  var body=document.body,bi=document.getElementById('btn-it'),be=document.getElementById('btn-en');
+  function set(l){body.classList.toggle('is-en',l==='en');document.documentElement.lang=l;bi.setAttribute('aria-pressed',l==='it');be.setAttribute('aria-pressed',l==='en');try{localStorage.setItem('lang',l)}catch(e){}}
+  bi.addEventListener('click',function(){set('it')});be.addEventListener('click',function(){set('en')});
+  var start='it';try{if(localStorage.getItem('lang')==='en')start='en'}catch(e){}set(start);
+})();
+</script>
+<script>/* statistiche anonime GoatCounter, solo sul sito pubblicato */
+if(/(^|\.)christoyannis\.com$|github\.io$/.test(location.hostname)){var g=document.createElement('script');g.async=true;g.src='https://gc.zgo.at/count.js';g.dataset.goatcounter='https://cchristoyannis.goatcounter.com/count';document.body.appendChild(g)}</script>
+</body>
+</html>

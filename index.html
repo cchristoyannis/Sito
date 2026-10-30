@@ -333,6 +333,7 @@ footer a{color:var(--on-deep-muted)}
 .dash .kicker{color:var(--brass)}
 .stamp{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#c9d6ea;border:1px solid rgba(255,255,255,.25);padding:8px 12px;white-space:nowrap}
 .stamp time{color:#fff}
+.stamp-box{display:flex;flex-direction:column;align-items:flex-end;gap:10px}.stamp-box .stamp{margin:0}.arch{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}.arch:hover{text-decoration:underline}@media (max-width:700px){.stamp-box{align-items:flex-start}}
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .tile{background:rgba(6,14,34,.35);border:1px solid rgba(255,255,255,.12);padding:22px;display:flex;flex-direction:column;gap:8px;backdrop-filter:blur(2px);transition:transform .2s,border-color .2s}
 .tile:hover{transform:translateY(-3px);border-color:var(--brass)}
@@ -429,7 +430,7 @@ footer a{color:var(--on-deep-muted)}
           <p lang="it">I numeri che seguo per capire lo stato di salute dell'ESG: credito, rischio, imprese, fondi. Perché il valore parte dal dato.</p>
           <p lang="en">The figures I track to read the health of ESG: credit, risk, companies, funding.</p>
         </div>
-        <p class="stamp"><span lang="it">Aggiornata al</span><span lang="en">Updated</span> <time datetime="2026-10-29">29.10.2026</time></p>
+        <div class="stamp-box"><p class="stamp"><span lang="it">Aggiornata al</span><span lang="en">Updated</span> <time datetime="2026-10-29">29.10.2026</time></p><a class="arch" href="archivio-dashboard.html"><span lang="it">Archivio delle edizioni precedenti</span><span lang="en">Past editions</span> →</a></div>
       </div>
       <div class="tiles">
         <article class="tile rise"><p class="tag"><span lang="it">Credito</span><span lang="en">Credit</span></p><b><span lang="it">€32 mld</span><span lang="en">€32 bn</span></b><p class="lbl" lang="it">finanza sostenibile erogata da Deutsche Bank nel terzo trimestre</p><p class="lbl" lang="en">sustainable finance from Deutsche Bank in Q3</p><p class="trend up"><span lang="it">▲ +42% sul trimestre</span><span lang="en">▲ +42% q/q</span></p><a href="https://www.esgtoday.com/deutsche-bank-reports-record-e32-billion-sustainable-finance-quarter/" target="_blank" rel="noopener">ESG Today, 28.10.2026 ↗</a></article>
