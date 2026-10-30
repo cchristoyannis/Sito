@@ -225,7 +225,22 @@ footer a{color:var(--on-deep-muted)}
 .path h3{font-size:1.25rem;font-weight:700;margin:0 0 8px;color:var(--on-deep)}
 .path p{margin:0 0 16px}
 @media (max-width:760px){.paths{grid-template-columns:1fr}}
-.contact-sec .mail{margin-top:36px}
+/* v9: form contatti */
+.cform{display:grid;gap:16px;margin-top:28px;max-width:560px}
+.cf-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.cform label{display:grid;gap:6px;font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-muted)}
+.cform input,.cform textarea{font:400 1rem var(--body);color:var(--on-deep);background:var(--deep-2);border:1px solid rgba(255,255,255,.18);border-radius:2px;padding:12px 14px;width:100%;box-sizing:border-box;letter-spacing:0;text-transform:none}
+.cform textarea{resize:vertical;min-height:120px}
+.cform input:focus,.cform textarea:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:transparent}
+.cform .cf-ok{display:flex;gap:10px;align-items:flex-start;font:400 .88rem/1.45 var(--body);letter-spacing:0;text-transform:none}
+.cform .cf-ok input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--brass)}
+.cform .cf-ok a{color:var(--on-deep)}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform button[disabled]{opacity:.6;cursor:wait}
+.cf-msg{margin:0;min-height:1.4em;color:var(--on-deep)}
+.cf-msg.err{color:#f2b8a8}
+.contact-sec .paths{grid-template-columns:1fr;align-content:start}
+@media (max-width:520px){.cf-row{grid-template-columns:1fr}}
 .speak-sec{background:var(--paper-2)}
 .speak-sec .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
 .topic-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
@@ -679,13 +694,26 @@ footer a{color:var(--on-deep-muted)}
         <p class="kicker"><span lang="it">Contatti</span><span lang="en">Contact</span></p>
         <h2 lang="it">Parliamone.</h2>
         <h2 lang="en">Let's talk.</h2>
-        <p lang="it">Rispondo entro due giorni lavorativi.</p>
-        <p lang="en">I reply within two working days.</p>
-        <p class="mail" id="addr">c.christoyannis@gmail.com</p>
-        <div class="row">
-          <button type="button" class="copy" id="copy-mail"><span lang="it">Copia indirizzo</span><span lang="en">Copy address</span></button>
-          <a class="btn ghost" href="https://www.linkedin.com/in/constantino-christoyannis/" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
-        </div>
+        <p lang="it">Scrivimi da qui: il messaggio mi arriva direttamente.</p>
+        <p lang="en">Write to me here: your message comes straight to me.</p>
+        <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Nuovo contatto dal sito christoyannis.com">
+          <input type="hidden" name="from_name" value="Sito christoyannis.com">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="cf-row">
+            <label><span lang="it">Nome</span><span lang="en">First name</span><input name="nome" autocomplete="given-name" required></label>
+            <label><span lang="it">Cognome</span><span lang="en">Last name</span><input name="cognome" autocomplete="family-name" required></label>
+          </div>
+          <label><span lang="it">Email</span><span lang="en">Email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label><span lang="it">Motivo del contatto</span><span lang="en">Reason for getting in touch</span><textarea name="motivo" rows="5" required></textarea></label>
+          <label class="cf-ok"><input type="checkbox" name="privacy" value="accettata" required><span lang="it">Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span><span lang="en">I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a> and agree to my data being used to reply to me.</span></label>
+          <div class="row">
+            <button type="submit" class="btn primary" style="font-family:inherit;cursor:pointer"><span lang="it">Invia</span><span lang="en">Send</span></button>
+            <a class="btn ghost" href="https://www.linkedin.com/in/constantino-christoyannis/" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+          <p class="cf-msg" id="cf-msg" role="status" aria-live="polite"></p>
+        </form>
       </div>
       <div class="paths rise">
         <div class="path">
@@ -759,9 +787,17 @@ footer a{color:var(--on-deep-muted)}
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel()})} else sel();
     });
   }
-  function sel(){var el=document.getElementById('addr'),r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  function sel(){}
   copy(document.getElementById('copy-bio'),function(){return document.getElementById(body.classList.contains('is-en')?'bio-en':'bio-it').textContent});
-  copy(document.getElementById('copy-mail'),function(){return document.getElementById('addr').textContent});
+  var cf=document.getElementById('cform'),cfm=document.getElementById('cf-msg');
+  cf.addEventListener('submit',function(e){
+    e.preventDefault(); var en=body.classList.contains('is-en');
+    if(!cf.checkValidity()){cfm.className='cf-msg err';cfm.textContent=en?'Please fill in every field and accept the privacy notice.':'Compila tutti i campi e accetta l\'informativa privacy.';cf.reportValidity();return}
+    var b=cf.querySelector('button[type=submit]'); b.disabled=true; cfm.className='cf-msg'; cfm.textContent=en?'Sending…':'Invio in corso…';
+    fetch(cf.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(cf)}).then(function(r){return r.json()}).then(function(d){
+      if(d.success){cf.reset();cfm.textContent=en?'Thank you, your message has been sent.':'Grazie, il messaggio è stato inviato.'} else throw 0;
+    }).catch(function(){cfm.className='cf-msg err';cfm.textContent=en?'Sending failed. Please try again or write to me on LinkedIn.':'Invio non riuscito. Riprova o scrivimi su LinkedIn.'}).then(function(){b.disabled=false});
+  });
   var lb=document.getElementById('lb'),lbi=document.getElementById('lb-img'),lbc=document.getElementById('lb-cap');
   document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){
     lbi.src=b.dataset.src; var c=b.parentNode.querySelector(body.classList.contains('is-en')?'[lang=en]':'[lang=it]'); lbc.textContent=c?c.textContent:''; lbi.alt=lbc.textContent; lb.hidden=false;})});
