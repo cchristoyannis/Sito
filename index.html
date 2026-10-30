@@ -707,7 +707,7 @@ footer a{color:var(--on-deep-muted)}
           </div>
           <label><span lang="it">Email</span><span lang="en">Email</span><input type="email" name="email" autocomplete="email" required></label>
           <label><span lang="it">Motivo del contatto</span><span lang="en">Reason for getting in touch</span><textarea name="motivo" rows="5" required></textarea></label>
-          <label class="cf-ok"><input type="checkbox" name="privacy" value="accettata" required><span lang="it">Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span><span lang="en">I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a> and agree to my data being used to reply to me.</span></label>
+          <label class="cf-ok"><input type="checkbox" name="privacy" value="accettata" required><span lang="it">Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span><span lang="en">I have read the <a href="privacy.html#en" target="_blank" rel="noopener">privacy notice</a> and agree to my data being used to reply to me.</span></label>
           <div class="row">
             <button type="submit" class="btn primary" style="font-family:inherit;cursor:pointer"><span lang="it">Invia</span><span lang="en">Send</span></button>
             <a class="btn ghost" href="https://www.linkedin.com/in/constantino-christoyannis/" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
@@ -725,9 +725,6 @@ footer a{color:var(--on-deep-muted)}
           <h3 lang="it">Per gli organizzatori</h3><h3 lang="en">For organisers</h3>
           <p lang="it">Convegni, seminari con crediti formativi, workshop. Indicami data, platea e tema.</p>
           <p lang="en">Conferences, accredited seminars, workshops. Send me the date, audience and topic.</p>
-          <button type="button" class="copy" id="copy-bio"><span lang="it">Copia la biografia breve</span><span lang="en">Copy short bio</span></button>
-          <p id="bio-it" lang="it" hidden>Constantino Christoyannis è Advisory &amp; Strategic Growth Director di Tecno Group. Aiuta imprese e investitori a trasformare la sostenibilità in creazione di valore, mettendo il dato al centro, e a fare sistema tra imprese e istituzioni. Ha lavorato come avvocato e poi in Grant Thornton e KPMG, dove ha guidato incarichi di rendicontazione e assurance di sostenibilità. Ha insegnato Metrics of Sustainable Impact ed è relatore e formatore per MEF, Unindustria, aziende e ordini professionali.</p>
-          <p id="bio-en" lang="en" hidden>Constantino Christoyannis is Advisory &amp; Strategic Growth Director at Tecno Group. He helps companies and investors turn sustainability into value creation, with data at the centre, and to work as a system with each other and with institutions. He worked as a lawyer and then at Grant Thornton and KPMG, where he led sustainability reporting and assurance engagements. He has taught Sustainable Impact Metrics and speaks and trains for MEF, Unindustria, companies and professional bodies.</p>
         </div>
       </div>
     </div>
@@ -739,8 +736,8 @@ footer a{color:var(--on-deep-muted)}
 <footer>
   <div class="wrap">
     <span>© 2026 Constantino Christoyannis</span>
-    <span lang="it">Questo sito non usa cookie né strumenti di tracciamento.</span>
-    <span lang="en">This site uses no cookies or tracking.</span>
+    <span lang="it">Questo sito non usa cookie né strumenti di tracciamento. <a href="privacy.html" style="color:inherit">Informativa privacy</a></span>
+    <span lang="en">This site uses no cookies or tracking. <a href="privacy.html#en" style="color:inherit">Privacy notice</a></span>
   </div>
 </footer>
 
@@ -780,15 +777,6 @@ footer a{color:var(--on-deep-muted)}
     document.querySelectorAll('.rise').forEach(function(el){el.classList.add('in')});
   }
 
-  function copy(btn,getText){
-    btn.addEventListener('click',function(){
-      var t=getText(), label=btn.innerHTML;
-      function done(){btn.textContent=body.classList.contains('is-en')?'Copied':'Copiato';setTimeout(function(){btn.innerHTML=label},1600)}
-      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel()})} else sel();
-    });
-  }
-  function sel(){}
-  copy(document.getElementById('copy-bio'),function(){return document.getElementById(body.classList.contains('is-en')?'bio-en':'bio-it').textContent});
   var cf=document.getElementById('cform'),cfm=document.getElementById('cf-msg');
   cf.addEventListener('submit',function(e){
     e.preventDefault(); var en=body.classList.contains('is-en');
