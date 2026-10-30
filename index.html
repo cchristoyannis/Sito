@@ -51,14 +51,14 @@ header.top.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.08),0 8px 24px rgba(0,0
 header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
 .mark{font-family:var(--head);font-weight:700;font-stretch:115%;font-size:1rem;letter-spacing:.02em;color:var(--on-deep);text-decoration:none;text-transform:uppercase}
 .mark i{font-style:normal;color:var(--brass)}
-nav.links{display:flex;gap:26px;align-items:center;font-size:.9rem}
+nav.links{display:flex;gap:20px;align-items:center;font-size:.9rem}
 nav.links a{color:var(--on-deep-muted);text-decoration:none}
 nav.links a:hover{color:var(--on-deep)}
 nav.links a.book{color:var(--deep);background:var(--brass);padding:8px 14px;border-radius:2px;font-weight:600}
 .lang{display:flex;gap:2px}
 .lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
 .lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
-@media (max-width:860px){nav.links a:not(.book){display:none}}
+@media (max-width:1080px){nav.links a:not(.book){display:none}}
 
 /* hero */
 .hero{background:linear-gradient(165deg,#060e22 0%,#0a1631 35%,#163a6b 100%);color:var(--on-deep);overflow:hidden}
@@ -326,6 +326,23 @@ footer a{color:var(--on-deep-muted)}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.tiles{grid-template-columns:1fr}}
 .kicker.eq{font-size:.8rem;letter-spacing:.12em}
+
+/* v7: rassegna stampa */
+.press{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.clip{background:var(--paper);border:1px solid var(--rule);display:flex;flex-direction:column;min-width:0}
+.clip .shot{all:unset;box-sizing:border-box;display:block;height:190px;overflow:hidden;cursor:zoom-in;background:var(--paper-2);border-bottom:1px solid var(--rule)}
+.clip .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.clip .shot:hover img{transform:scale(1.04)}
+.clip .shot:focus-visible{outline:2px solid var(--brass);outline-offset:-2px}
+.clip .shot.txt{cursor:default;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;background:linear-gradient(135deg,#060e22,#163a6b);color:#eef2f8;font:700 1.45rem/1.15 var(--head);border-bottom:2px solid var(--brass)}
+.clip-b{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.clip .src{margin:0;font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brass-ink)}
+.clip h3{font-size:1.05rem;line-height:1.25;margin:0;font-weight:700}
+.clip blockquote{margin:0;font:italic .95rem/1.45 var(--serif);color:var(--muted);flex:1}
+.clip a{font-weight:600;font-size:.9rem;color:var(--ledger);text-decoration:none;margin-top:auto}
+.clip a:hover{text-decoration:underline}
+@media (max-width:900px){.press{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.press{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -339,7 +356,8 @@ footer a{color:var(--on-deep-muted)}
       <a href="#dashboard">Dashboard</a>
       <a href="#advisory">Advisory</a>
       <a href="#pillole"><span lang="it">Pillole ESG</span><span lang="en">ESG notes</span></a>
-      <a href="#pubblicazioni"><span lang="it">Pubblicazioni</span><span lang="en">Publications</span></a>
+      <a href="#pubblicazioni"><span lang="it">Pubblicazioni/Speech</span><span lang="en">Publications/Speech</span></a>
+      <a href="#stampa"><span lang="it">Stampa</span><span lang="en">Press</span></a>
       <div class="lang" role="group" aria-label="Lingua / Language">
         <button type="button" id="btn-it" aria-pressed="true">IT</button>
         <button type="button" id="btn-en" aria-pressed="false">EN</button>
@@ -400,17 +418,29 @@ footer a{color:var(--on-deep-muted)}
         <h2 lang="en">Institutions, law and business: a path built in the field.</h2>
         <p class="lede" lang="it">L'ESG non è solo un costo o un obbligo di conformità: è efficienza dei processi, accesso al credito e crescita dei ricavi. Il mio lavoro è dimostrarlo con i numeri.</p>
         <p class="lede" lang="en">ESG is not just a cost or a compliance obligation: it means more efficient processes, better access to credit and revenue growth. My job is to prove it with numbers.</p>
-        <p class="edu" lang="it">Formazione da giurista ed economista: MBA all'Imperial College, LUISS, Università di Perugia. Visiting student e ricercatore in etica e sostenibilità alla Pontificia Università Gregoriana (Scuola Sinderesi, 2016-2020). Già docente di Metrics of Sustainable Impact (NABA).</p>
-        <p class="edu" lang="en">Trained in law and economics: MBA from Imperial College, LUISS, University of Perugia. Visiting student and researcher in ethics and sustainability at the Pontifical Gregorian University (Sinderesi School, 2016-2020). Former lecturer in Sustainable Impact Metrics (NABA).</p>
       </div>
       <ol class="path-line">
         <li class="step rise">
-          <p class="when" lang="it">Le basi</p><p class="when" lang="en">Foundations</p>
-          <h3 lang="it">Avvocato e Console di Grecia a Perugia</h3><h3 lang="en">Lawyer and Consul of Greece in Perugia</h3>
-          <p lang="it">Ho iniziato dal diritto e dalle istituzioni: come nascono le regole, come si costruisce un rapporto tra amministrazioni, imprese e comunità.</p>
-          <p lang="en">I started with law and institutions: how rules are made, and how relationships between public bodies, companies and communities are built.</p>
+          <p class="when" lang="it">Le radici</p><p class="when" lang="en">Roots</p>
+          <h3 lang="it">Impegno civico e associazionismo</h3><h3 lang="en">Civic engagement</h3>
+          <p lang="it">Sono coinvolto da sempre nell'associazionismo e nell'impegno civico, prima nel Rotaract e poi nel Rotary. Nel febbraio 2011 ho moderato a Perugia un convegno sull'impresa etica con Brunello Cucinelli, Aurelio Forcignano e Giuseppe Colaiacovo. È lì che mi sono avvicinato ai temi che avrebbero segnato il mio percorso umano e professionale.</p>
+          <p lang="en">I have always been involved in associations and civic life, first in Rotaract and then in Rotary. In February 2011 I moderated a conference on ethical business in Perugia with Brunello Cucinelli, Aurelio Forcignano and Giuseppe Colaiacovo. That is where I first met the themes that would shape my personal and professional path.</p>
         </li>
-        <li class="collage c3 rise"><figure class="ph tall"><button type="button" class="zoom" data-src="img/avvocato.jpg" aria-label="Ingrandisci"><img src="img/avvocato.jpg" alt="Gli anni da avvocato" loading="lazy"></button><figcaption><span lang="it">Gli anni da avvocato</span><span lang="en">My years as a lawyer</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-tgr.jpg" aria-label="Ingrandisci"><img src="img/consul-tgr.jpg" alt="Intervista al TGR come Console di Grecia a Perugia" loading="lazy"></button><figcaption><span lang="it">Intervista al TGR come Console di Grecia a Perugia</span><span lang="en">TGR interview as Consul of Greece in Perugia</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-convegno.jpg" aria-label="Ingrandisci"><img src="img/consul-convegno.jpg" alt="Convegno a Perugia, anni da console" loading="lazy"></button><figcaption><span lang="it">Convegno a Perugia, anni da console</span><span lang="en">Conference in Perugia, consular years</span></figcaption></figure></li>
+        <li class="step rise">
+          <p class="when" lang="it">La formazione</p><p class="when" lang="en">Education</p>
+          <h3 lang="it">Giurista ed economista</h3><h3 lang="en">Law and economics</h3>
+          <p lang="it">Laurea in Giurisprudenza all'Università di Perugia, con un Erasmus all'Università Aristotele di Salonicco. Laurea magistrale in Management (Corporate Finance) alla LUISS Guido Carli. MBA all'Imperial College Business School di Londra, con moduli su investimenti in clean technology e sostenibilità come vantaggio competitivo.</p>
+          <p lang="en">Law degree from the University of Perugia, with an Erasmus year at the Aristotle University of Thessaloniki. MSc in Management (Corporate Finance) from LUISS Guido Carli. MBA from Imperial College Business School in London, with modules on clean technology investment and sustainability as a competitive advantage.</p>
+          <ul lang="it"><li>Visiting student e ricercatore in etica e sostenibilità alla Pontificia Università Gregoriana (Scuola Sinderesi, 2016-2020), coautore dei capitoli economici di due volumi della Scuola</li><li>Già docente di Metrics of Sustainable Impact alla NABA</li></ul>
+          <ul lang="en"><li>Visiting student and researcher in ethics and sustainability at the Pontifical Gregorian University (Sinderesi School, 2016-2020), co-author of the economics chapters of two of the School's volumes</li><li>Former lecturer in Sustainable Impact Metrics at NABA</li></ul>
+        </li>
+        <li class="step rise">
+          <p class="when" lang="it">Istituzioni e diritto</p><p class="when" lang="en">Institutions and law</p>
+          <h3 lang="it">Avvocato e Console di Grecia a Perugia</h3><h3 lang="en">Lawyer and Consul of Greece in Perugia</h3>
+          <p lang="it">Dopo il giuramento da avvocato, dal 2013 ho rappresentato la Grecia come Console a Perugia. Ho imparato come nascono le regole e come si costruisce un rapporto tra amministrazioni, imprese e comunità.</p>
+          <p lang="en">After being sworn in as a lawyer, from 2013 I represented Greece as Consul in Perugia. I learned how rules are made and how relationships between public bodies, companies and communities are built.</p>
+        </li>
+        <li class="collage c3 rise"><figure class="ph tall"><button type="button" class="zoom" data-src="img/avvocato.jpg" aria-label="Ingrandisci"><img src="img/avvocato.jpg" alt="Il giuramento da avvocato" loading="lazy"></button><figcaption><span lang="it">Il giuramento da avvocato</span><span lang="en">Sworn in as a lawyer</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-tgr.jpg" aria-label="Ingrandisci"><img src="img/consul-tgr.jpg" alt="Intervista al TGR come Console di Grecia a Perugia" loading="lazy"></button><figcaption><span lang="it">Intervista al TGR come Console di Grecia a Perugia</span><span lang="en">TGR interview as Consul of Greece in Perugia</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-tg-intervista.jpg" aria-label="Ingrandisci"><img src="img/consul-tg-intervista.jpg" alt="Ospite del TGR come Console di Grecia" loading="lazy"></button><figcaption><span lang="it">Ospite del TGR come Console di Grecia</span><span lang="en">On TGR as Consul of Greece</span></figcaption></figure><figure class="ph wide"><button type="button" class="zoom" data-src="img/consul-tg-studio.jpg" aria-label="Ingrandisci"><img src="img/consul-tg-studio.jpg" alt="In studio al TGR" loading="lazy"></button><figcaption><span lang="it">In studio al TGR</span><span lang="en">In the TGR studio</span></figcaption></figure><figure class="ph"><button type="button" class="zoom" data-src="img/consul-convegno.jpg" aria-label="Ingrandisci"><img src="img/consul-convegno.jpg" alt="Convegno a Perugia, anni da console" loading="lazy"></button><figcaption><span lang="it">Convegno a Perugia, anni da console</span><span lang="en">Conference in Perugia, consular years</span></figcaption></figure></li>
         <li class="step rise">
           <p class="when" lang="it">La governance dall'interno</p><p class="when" lang="en">Governance from the inside</p>
           <h3 lang="it">Consiglio di amministrazione del Porto di Salonicco</h3><h3 lang="en">Board of Directors, Port of Thessaloniki</h3>
@@ -538,7 +568,7 @@ footer a{color:var(--on-deep-muted)}
     <div class="wrap">
       <div class="sec-head rise">
         <div>
-          <p class="kicker"><span lang="it">Pubblicazioni e interventi</span><span lang="en">Publications and talks</span></p>
+          <p class="kicker"><span lang="it">Pubblicazioni e speech</span><span lang="en">Publications and speeches</span></p>
           <h2 lang="it">Sul palco, in aula e su carta.</h2>
           <h2 lang="en">On stage, in class and in print.</h2>
         </div>
@@ -548,22 +578,52 @@ footer a{color:var(--on-deep-muted)}
           <h3 lang="it">Pubblicazioni</h3><h3 lang="en">Publications</h3>
           <ul class="more">
             <li><time>KPMG · Unindustria</time><div><strong lang="it">ESG Assessment della filiera meccatronica</strong><strong lang="en">ESG Assessment of the mechatronics supply chain</strong><span lang="it">Coautore</span><span lang="en">Co-author</span></div></li>
-            <li><time datetime="2024-02-21">21.02.2024</time><div><strong lang="it">Documento strategico di Umbria Aerospace Cluster</strong><strong lang="en">Umbria Aerospace Cluster strategy paper</strong><span>Confindustria Umbria</span></div></li>
+            <li><time datetime="2024-02-22">22.02.2024</time><div><strong lang="it">Documento strategico di Umbria Aerospace Cluster</strong><strong lang="en">Umbria Aerospace Cluster strategy paper</strong><span>Confindustria Umbria</span></div></li>
             <li><time>PMI</time><div><strong lang="it">Vademecum ESG per Piccole e Medie Imprese</strong><strong lang="en">ESG handbook for small and medium enterprises</strong><span lang="it">Guida pratica</span><span lang="en">Practical guide</span></div></li>
             <li><time datetime="2018-11">11.2018</time><div><strong lang="it">«Immigrazione. Comprensione e proposte»</strong><strong lang="en">"Immigration: Understanding and Proposals"</strong><span lang="it">Coautore del capitolo economico. Scuola Sinderesi, Gregorian &amp; Biblical Press</span><span lang="en">Co-author of the economics chapter. Sinderesi School, Gregorian &amp; Biblical Press</span></div></li>
             <li><time datetime="2017-10">10.2017</time><div><strong lang="it">«Oltre i limiti. Conseguenze della rivoluzione tecnologica nella società»</strong><strong lang="en">"Beyond the Limits: Consequences of the Technological Revolution in Society"</strong><span lang="it">Coautore del capitolo economico, caso di studio sui cambiamenti del sistema finanziario. Scuola Sinderesi, Gregorian &amp; Biblical Press</span><span lang="en">Co-author of the economics chapter, case study on changes in the financial system. Sinderesi School, Gregorian &amp; Biblical Press</span></div></li>
           </ul>
         </div>
         <div class="rise">
-          <h3 lang="it">Conferenze principali</h3><h3 lang="en">Main conferences</h3>
+          <h3 lang="it">Speech</h3><h3 lang="en">Speeches</h3>
           <ul class="more">
             <li><time datetime="2026-05-22">22.05.2026</time><div><strong lang="it">Laboratorio sulla rendicontazione e attestazione di sostenibilità</strong><strong lang="en">Workshop on sustainability reporting and assurance</strong><span lang="it">Ordine e Fondazione dei Dottori Commercialisti di Teramo</span><span lang="en">Teramo Order of Chartered Accountants</span></div></li>
             <li><time datetime="2026-05-12">12.05.2026</time><div><strong lang="it">"Rapporto banca-impresa", Confindustria L'Aquila</strong><strong lang="en">"Bank-business relationship", Confindustria L'Aquila</strong><span lang="it">Con il vicepresidente nazionale di Confindustria e la presidente di ABI Abruzzo</span><span lang="en">With Confindustria's national vice-president and the president of ABI Abruzzo</span></div></li>
+            <li><time datetime="2025-11-26">26.11.2025</time><div><strong lang="it">«Agrivoltaico: un nuovo modello di business per un valore condiviso», Roma</strong><strong lang="en">"Agrivoltaics: a new business model for shared value", Rome</strong><span lang="it">Moderatore del panel sull'agrivoltaico per la transizione energetica, con ENEA, RINA, SolarPower Europe e Althesys. AIAS, Auditorium GSE</span><span lang="en">Moderator of the panel on agrivoltaics and the energy transition, with ENEA, RINA, SolarPower Europe and Althesys. AIAS, GSE Auditorium</span></div></li>
             <li><time datetime="2025-05-06">06.05.2025</time><div><strong>Audit &amp; ESG Assurance, UNINT</strong><span lang="it">Università degli Studi Internazionali di Roma</span><span lang="en">UNINT University, Rome</span></div></li>
+            <li><time datetime="2024-02-22">22.02.2024</time><div><strong lang="it">Presentazione del Documento strategico di Umbria Aerospace Cluster, Perugia</strong><strong lang="en">Launch of the Umbria Aerospace Cluster strategy paper, Perugia</strong><span lang="it">Relatore per KPMG, con Regione Umbria, Sviluppumbria, Politecnico di Torino e Università di Perugia</span><span lang="en">Speaker for KPMG, with Regione Umbria, Sviluppumbria, Politecnico di Torino and the University of Perugia</span></div></li>
             <li><time datetime="2020-01-11">11.01.2020</time><div><strong lang="it">«Accendi la legalità. L'Etica come risposta alla crisi odierna», Perugia</strong><strong lang="en">"Accendi la legalità: ethics as a response to today's crisis", Perugia</strong><span lang="it">Moderatore, con il procuratore Nicola Gratteri tra i relatori. Fondazione Sinderesi, Palazzo Cesaroni</span><span lang="en">Moderator, with prosecutor Nicola Gratteri among the speakers. Fondazione Sinderesi, Palazzo Cesaroni</span><button type="button" class="zoom poster" data-src="img/perugia-2020.jpg"><img src="img/perugia-2020.jpg" alt="" loading="lazy"><span lang="it">Vedi la locandina</span><span lang="en">See the poster</span></button></div></li>
+            <li><time datetime="2019-03-14">14.03.2019</time><div><strong lang="it">«People and peoples. Religion and religions», LUISS, Roma</strong><strong lang="en">"People and peoples. Religion and religions", LUISS, Rome</strong><span lang="it">Relatore come Console di Grecia. Fondazione Sinderesi, Konrad-Adenauer-Stiftung</span><span lang="en">Speaker as Consul of Greece. Fondazione Sinderesi, Konrad-Adenauer-Stiftung</span></div></li>
+            <li><time datetime="2017-02-09">09.02.2017</time><div><strong lang="it">Giornata della lingua e della cultura greca, Perugia</strong><strong lang="en">Day of Greek Language and Culture, Perugia</strong><span lang="it">Intervento come Console di Grecia</span><span lang="en">Address as Consul of Greece</span></div></li>
+            <li><time datetime="2011-02">02.2011</time><div><strong lang="it">Convegno sull'impresa etica, Perugia</strong><strong lang="en">Conference on ethical business, Perugia</strong><span lang="it">Moderatore, con Brunello Cucinelli, Aurelio Forcignano e Giuseppe Colaiacovo</span><span lang="en">Moderator, with Brunello Cucinelli, Aurelio Forcignano and Giuseppe Colaiacovo</span></div></li>
             <li><time>MEF · ABI · ODCEC</time><div><strong lang="it">Formazione ESG per istituzioni e ordini professionali</strong><strong lang="en">ESG training for institutions and professional bodies</strong><span lang="it">Anche AIAS e Unindustria</span><span lang="en">Also AIAS and Unindustria</span></div></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="stampa">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <div>
+          <p class="kicker"><span lang="it">Rassegna stampa</span><span lang="en">Press</span></p>
+          <h2 lang="it">Ne hanno scritto.</h2>
+          <h2 lang="en">In the press.</h2>
+        </div>
+      </div>
+      <div class="press">
+          <article class="clip rise"><button type="button" class="zoom shot" data-src="img/stampa/aias-gse-2025.jpg" aria-label="Ingrandisci"><img src="img/stampa/aias-gse-2025.jpg" alt="" loading="lazy"></button><div class="clip-b"><p class="src">AIAS · Auditorium GSE · <time datetime="2025-11-26">26.11.2025</time></p><h3 lang="it">«Agrivoltaico: un nuovo modello di business per un valore condiviso», Roma</h3><h3 lang="en">"Agrivoltaics: a new business model for shared value", Rome</h3><blockquote>«Modera: Constantino Christoyannis, Senior Manager, ESG Audit &amp; Accounting KPMG Italy»</blockquote><a href="https://www.associazioneitalianagrivoltaicosostenibile.com/eventi/convegno-aias-agrivoltaico-un-nuovo-modello-di-business-per-un-valore-condiviso/" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><button type="button" class="zoom shot" data-src="img/stampa/cuoreeconomico-2024.jpg" aria-label="Ingrandisci"><img src="img/stampa/cuoreeconomico-2024.jpg" alt="" loading="lazy"></button><div class="clip-b"><p class="src">Cuoreeconomico · <time datetime="2024-02-22">22.02.2024</time></p><h3 lang="it">Umbria Aerospace Cluster, le strategie industriali in un documento</h3><h3 lang="en">Umbria Aerospace Cluster: industrial strategy in one document</h3><blockquote>«Sono inoltre intervenuti […] Maurizio Cicioni e Constantino Christoyannis, di KPMG.» Ripreso anche da Corriere dell'Umbria, Umbria24, UmbriaOn e RGU.</blockquote></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">Il Messaggero</div><div class="clip-b"><p class="src">Il Messaggero · <time datetime="2020-01">01.2020</time></p><h3 lang="it">Gratteri a Perugia: legami tra 'ndrangheta e politica</h3><h3 lang="en">Gratteri in Perugia on links between the 'ndrangheta and politics</h3><blockquote>«L'evento è stato coordinato da Constantino Christoyannis, console di Grecia a Perugia.»</blockquote><a href="https://www.ilmessaggero.it/umbria/nicola_gratteri_perugia_legami_ndrangheta_politica_mafie_fanno_votare_massoneria_deviata_professionisti_perugini-4980363.html" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><button type="button" class="zoom shot" data-src="img/perugia-2020.jpg" aria-label="Ingrandisci"><img src="img/perugia-2020.jpg" alt="" loading="lazy"></button><div class="clip-b"><p class="src">Fondazione Sinderesi · <time datetime="2020-01-11">11.01.2020</time></p><h3 lang="it">Convegno «Accendi la legalità»</h3><h3 lang="en">"Accendi la legalità" conference</h3><blockquote>«S.E. dott. Constantino Christoyannis, Console di Grecia a Perugia, per la moderazione dell'evento.»</blockquote><a href="https://www.fondazionesinderesi.org/convegno-accendi-la-legalita/" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">PerugiaToday</div><div class="clip-b"><p class="src">PerugiaToday · <time datetime="2020-01">01.2020</time></p><h3 lang="it">Etica e legalità, se ne parla a Perugia in un convegno</h3><h3 lang="en">Ethics and legality: a conference in Perugia</h3><blockquote>«Coordinato da Constantino Christoyannis, Console di Grecia a Perugia.»</blockquote><a href="https://www.perugiatoday.it/eventi/etica-e-legalita-se-ne-parla-a-perugia-in-un-convegno.html" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">Provincia di Perugia</div><div class="clip-b"><p class="src">Provincia di Perugia · <time datetime="2020-01">01.2020</time></p><h3 lang="it">Etica e legalità a Perugia, il convegno della Fondazione Sinderesi</h3><h3 lang="en">Ethics and legality in Perugia: the Fondazione Sinderesi conference</h3><a href="https://www.provincia.perugia.it/news/etica-legalita-perugia-il-convegno-della-fondazione-sinderesi" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">Fondazione Sinderesi</div><div class="clip-b"><p class="src">Fondazione Sinderesi · <time datetime="2019-11-18">18.11.2019</time></p><h3 lang="it">Presentazione di «Europe as a Project» alla Pontificia Università Gregoriana</h3><h3 lang="en">Launch of "Europe as a Project" at the Pontifical Gregorian University</h3><blockquote>Il volume della Scuola Sinderesi presentato con il presidente del Parlamento europeo David Sassoli.</blockquote><a href="https://www.fondazionesinderesi.org/presentazione-europe-as-a-project/" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">LUISS · Fondazione Sinderesi</div><div class="clip-b"><p class="src">LUISS · Fondazione Sinderesi · <time datetime="2019-03-14">14.03.2019</time></p><h3 lang="it">«People and peoples»: Religion and religions</h3><h3 lang="en">"People and peoples": Religion and religions</h3><blockquote>Tra i relatori «Constantino N. Christoyannis, Console di Grecia in Perugia», con Religion Today Film Festival e Konrad-Adenauer-Stiftung.</blockquote><a href="https://www.fondazionesinderesi.org/wp/wp-content/uploads/2019/03/Luiss_People_and_peoples.pdf" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><button type="button" class="zoom shot" data-src="img/stampa/messaggero-2018.jpg" aria-label="Ingrandisci"><img src="img/stampa/messaggero-2018.jpg" alt="" loading="lazy"></button><div class="clip-b"><p class="src">Il Messaggero · <time datetime="2018-05-15">15.05.2018</time></p><h3 lang="it">«Metti una sera a cena il Rotary e arrivano "occhi" per la sicurezza»</h3><h3 lang="en">Rotary dinner funds CCTV for the city</h3><blockquote>Nel consiglio del Rotary Club Perugia Trasimeno, «tutti alla guida di commissioni».</blockquote></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">Umbria Domani</div><div class="clip-b"><p class="src">Umbria Domani · <time datetime="2017-02-12">12.02.2017</time></p><h3 lang="it">Perugia, celebrata la «Giornata della lingua e della cultura greca»</h3><h3 lang="en">Perugia celebrates the Day of Greek Language and Culture</h3><blockquote>«In un periodo non facile riscoprire il patrimonio e l'identità greca è un valore.»</blockquote><a href="https://www.umbriadomani.it/umbria-in-pillole/perugia-celebrata-la-giornata-della-lingua-e-della-cultura-greca-129389/" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
+          <article class="clip rise"><div class="shot txt" aria-hidden="true">Gazzetta Ufficiale</div><div class="clip-b"><p class="src">Gazzetta Ufficiale · <time datetime="2014-01-08">08.01.2014</time></p><h3 lang="it">Exequatur come Console onorario della Repubblica Ellenica a Perugia</h3><h3 lang="en">Exequatur as Honorary Consul of the Hellenic Republic in Perugia</h3><blockquote>«In data 19 novembre 2013 il Ministero degli affari esteri ha concesso l'exequatur.»</blockquote><a href="https://gazzettaufficiale.biz/atti/2014/20140005/13A10755.htm" target="_blank" rel="noopener"><span lang="it">Leggi</span><span lang="en">Read</span> &rarr;</a></div></article>
       </div>
     </div>
   </section>
