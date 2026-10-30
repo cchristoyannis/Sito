@@ -216,6 +216,7 @@ footer a{color:var(--on-deep-muted)}
 .pill p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
 .pill a{font-weight:600;font-size:.9rem;color:var(--ledger);text-decoration:none}
 .pill a:hover{text-decoration:underline}
+.arch-link{display:inline-block;margin-top:10px;font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brass-ink);text-decoration:none}.arch-link:hover{text-decoration:underline}
 @media (max-width:900px){.pills{grid-template-columns:1fr}}
 .pubs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
 .pubs h3{font:500 .72rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
@@ -595,8 +596,11 @@ footer a{color:var(--on-deep-muted)}
           <h2 lang="it">Le notizie della settimana, lette in chiave di valore.</h2>
           <h2 lang="en">This week's news, read for business value.</h2>
         </div>
-        <p lang="it">Due volte a settimana su LinkedIn. Qui le ultime tre.</p>
-        <p lang="en">Twice a week on LinkedIn. The latest three are here.</p>
+        <div>
+          <p lang="it">Due volte a settimana su LinkedIn. Qui le ultime tre.</p>
+          <p lang="en">Twice a week on LinkedIn. The latest three are here.</p>
+          <a class="arch-link" href="archivio-pillole.html"><span lang="it">Tutte le pillole</span><span lang="en">All notes</span> →</a>
+        </div>
       </div>
       <div class="pills">
         <article class="pill rise">

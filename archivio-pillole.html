@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivio Pillole ESG · Constantino Christoyannis</title>
+<meta name="description" content="Tutte le Pillole ESG di Constantino Christoyannis: le notizie della settimana lette in chiave di valore.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Spectral:ital,wght@1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --deep:#0a1631; --deep-2:#173561; --on-deep:#eef2f8; --on-deep-muted:#a9b8d2;
+  --paper:#ffffff; --paper-2:#f1f4f9; --ink:#121c2e; --muted:#5a6578; --rule:#d8dfe9;
+  --brass:#c9a24a; --brass-ink:#7a5c1c; --ledger:#1d4e89;
+  --head:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Spectral", Georgia, serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper-2);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--head);font-stretch:112%;letter-spacing:-.015em;margin:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+body:not(.is-en) [lang="en"]{display:none!important}
+body.is-en [lang="it"]{display:none!important}
+.kicker{font:500 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-ink);margin:0 0 14px}
+header.top{background:var(--deep);color:var(--on-deep)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.back{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep);text-decoration:none}
+.back:hover{color:var(--brass)}
+.lang{display:flex;gap:2px}
+.lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
+.lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
+main{min-height:80vh}
+main .wrap{padding-block:56px 72px}
+.head{margin-bottom:36px}
+.head h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.05;margin-bottom:12px}
+.head p{margin:0;max-width:60ch;color:var(--muted)}
+.month{font:500 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:36px 0 14px}
+.month:first-of-type{margin-top:0}
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pill{background:var(--paper);border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .2s}
+.pill:hover{transform:translateY(-3px);border-color:var(--brass)}
+.pill time{font:500 .72rem var(--mono);letter-spacing:.12em;color:var(--brass-ink)}
+.pill h3{font-size:1.2rem;font-weight:700;line-height:1.2}
+.pill p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+.pill a{font-weight:600;font-size:.9rem;color:var(--ledger);text-decoration:none}
+.pill a:hover{text-decoration:underline}
+@media (max-width:900px){.pills{grid-template-columns:1fr}}
+footer{background:var(--deep);color:var(--on-deep-muted);font-size:.85rem}
+footer .wrap{padding-block:24px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="back" href="./#pillole">← <span lang="it">Torna al sito</span><span lang="en">Back to the site</span></a>
+  <div class="lang" role="group" aria-label="Lingua / Language"><button type="button" id="btn-it" aria-pressed="true">IT</button><button type="button" id="btn-en" aria-pressed="false">EN</button></div>
+</div></header>
+<main>
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker"><span lang="it">Pillole ESG</span><span lang="en">ESG notes</span></p>
+      <h1 lang="it">Archivio delle Pillole ESG</h1><h1 lang="en">ESG notes archive</h1>
+      <p lang="it">Tutte le pillole pubblicate su LinkedIn, dalla più recente: le notizie della settimana, lette in chiave di valore.</p>
+      <p lang="en">Every note published on LinkedIn, newest first: the week's news, read for business value.</p>
+    </div>
+    <!-- PILLOLE: la più recente in alto. Ogni nuova pillola va aggiunta in cima al mese corrente; per un mese nuovo, nuovo <h2 class="month"> e nuovo <div class="pills">. -->
+    <h2 class="month"><span lang="it">Ottobre 2026</span><span lang="en">October 2026</span></h2>
+    <div class="pills">
+        <article class="pill">
+          <time datetime="2026-10-29">29.10.2026</time>
+          <h3 lang="it">No, Bruxelles non ha fissato nuovi limiti di temperatura</h3><h3 lang="en">No, Brussels has not set new temperature limits</h3>
+          <p lang="it">1,5°C, 2°C e 3°C sono lo scenario su cui pianificare, non obiettivi. Intanto il 91% delle imprese non ha un piano concreto.</p>
+          <p lang="en">1.5°C, 2°C and 3°C are the planning baseline, not targets. Meanwhile 91% of companies have no concrete plan.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+        <article class="pill">
+          <time datetime="2026-10-27">27.10.2026</time>
+          <h3 lang="it">L'IA non è un'alternativa all'ESG: è la G di ESG</h3><h3 lang="en">AI is not an alternative to ESG: it is the G in ESG</h3>
+          <p lang="it">Ralph Lauren toglie la sostenibilità dai bonus, Hyundai la porta nella filiera. Integrare vuol dire continuare a misurare.</p>
+          <p lang="en">Ralph Lauren drops sustainability from bonuses, Hyundai takes it into its supply chain. Embedding means you keep measuring.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+        <article class="pill">
+          <time datetime="2026-10-22">22.10.2026</time>
+          <h3 lang="it">Le banche prestano per la transizione. Ma ognuna fa domande diverse</h3><h3 lang="en">Banks are lending for the transition. But each asks different questions</h3>
+          <p lang="it">Più credito ESG e stress test climatici dal 2027: serve una metodologia comune per non far compilare alle PMI tre questionari uguali.</p>
+          <p lang="en">More ESG credit and climate stress tests from 2027: a common method would spare SMEs filling in the same questionnaire three times.</p>
+          <a href="https://www.linkedin.com/in/constantino-christoyannis/recent-activity/all/" target="_blank" rel="noopener"><span lang="it">Leggi su LinkedIn</span><span lang="en">Read on LinkedIn</span> ↗</a>
+        </article>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">© 2026 Constantino Christoyannis · <a href="privacy.html">Privacy</a></div></footer>
+<script>
+(function(){
+  var body=document.body,bi=document.getElementById('btn-it'),be=document.getElementById('btn-en');
+  function set(l){body.classList.toggle('is-en',l==='en');document.documentElement.lang=l;bi.setAttribute('aria-pressed',l==='it');be.setAttribute('aria-pressed',l==='en');try{localStorage.setItem('lang',l)}catch(e){}}
+  bi.addEventListener('click',function(){set('it')});be.addEventListener('click',function(){set('en')});
+  var start='it';try{if(localStorage.getItem('lang')==='en')start='en'}catch(e){}set(start);
+})();
+</script>
+<script>/* statistiche anonime GoatCounter, solo sul sito pubblicato */
+if(/(^|\.)christoyannis\.com$|github\.io$/.test(location.hostname)){var g=document.createElement('script');g.async=true;g.src='https://gc.zgo.at/count.js';g.dataset.goatcounter='https://cchristoyannis.goatcounter.com/count';document.body.appendChild(g)}</script>
+</body>
+</html>
