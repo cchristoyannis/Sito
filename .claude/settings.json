@@ -1,0 +1,1 @@
+{"permissions":{"allow":["Bash(python3 /mnt/project-files/sito-web/strumenti/genera_pillole.py:*)","Bash(cp:*)","Bash(git add:*)","Bash(git -c:*)","Bash(git push:*)","Bash(git pull:*)","Bash(git fetch:*)"]}}
