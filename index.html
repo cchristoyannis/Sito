@@ -62,7 +62,25 @@ nav.links a.book{color:var(--deep);background:var(--brass);padding:8px 14px;bord
 .lang{display:flex;gap:2px}
 .lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
 .lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
-@media (max-width:1080px){nav.links a:not(.book){display:none}}
+.sec-links{display:contents}
+nav.links a.mob-only{display:none}
+.menu-btn{display:none;width:40px;height:40px;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,.3);border-radius:2px;cursor:pointer;padding:0;color:var(--on-deep)}
+.menu-btn .bars,.menu-btn .bars::before,.menu-btn .bars::after{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:transform .2s,background .2s}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0}
+.menu-btn .bars::before{top:-6px}.menu-btn .bars::after{top:6px}
+.menu-btn[aria-expanded="true"] .bars{background:transparent}
+.menu-btn[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:1080px){
+  nav.links{gap:12px}
+  .menu-btn{display:inline-flex}
+  .sec-links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--deep);border-top:1px solid rgba(255,255,255,.1);box-shadow:0 12px 24px rgba(0,0,0,.3);padding:8px max(20px,env(safe-area-inset-left,0px)) 16px;flex-direction:column}
+  header.top.open .sec-links{display:flex}
+  .sec-links a{display:block;padding:14px 0;font-size:1.02rem;color:var(--on-deep);border-bottom:1px solid rgba(255,255,255,.08)}
+  .sec-links a:last-child{border-bottom:0}
+}
+@media (max-width:420px){.mark{font-size:.9rem}nav.links a.book{display:none}nav.links .sec-links a.mob-only{display:block}}
 
 /* hero */
 .hero{background:linear-gradient(165deg,#060e22 0%,#0a1631 35%,#163a6b 100%);color:var(--on-deep);overflow:hidden}
@@ -404,17 +422,21 @@ footer a{color:var(--on-deep-muted)}
   <div class="wrap">
     <a class="mark" href="#top">Constantino <i>Christoyannis</i></a>
     <nav class="links" aria-label="Sezioni">
+      <div class="sec-links" id="sec-links">
       <a href="#chi"><span lang="it">Chi sono</span><span lang="en">About</span></a>
       <a href="#dashboard">Dashboard</a>
       <a href="#advisory">Advisory</a>
       <a href="#pillole"><span lang="it">Pillole ESG</span><span lang="en">ESG notes</span></a>
       <a href="#pubblicazioni"><span lang="it">Pubblicazioni/Speech</span><span lang="en">Publications/Speech</span></a>
       <a href="#stampa"><span lang="it">Stampa</span><span lang="en">Press</span></a>
+      <a class="mob-only" href="#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
+      </div>
       <div class="lang" role="group" aria-label="Lingua / Language">
         <button type="button" id="btn-it" aria-pressed="true">IT</button>
         <button type="button" id="btn-en" aria-pressed="false">EN</button>
       </div>
       <a class="book" href="#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="sec-links"><span class="bars" aria-hidden="true"></span><span class="sr" lang="it">Menu</span><span class="sr" lang="en">Menu</span></button>
     </nav>
   </div>
 </header>
@@ -806,6 +828,11 @@ footer a{color:var(--on-deep-muted)}
 
   var hdr=document.getElementById('hdr');
   addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
+  var mb=document.getElementById('menu-btn'), sl=document.getElementById('sec-links');
+  function menu(o){hdr.classList.toggle('open',o);mb.setAttribute('aria-expanded',String(o))}
+  mb.addEventListener('click',function(){menu(!hdr.classList.contains('open'))});
+  sl.addEventListener('click',function(e){if(e.target.closest('a'))menu(false)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
 
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if('IntersectionObserver' in window && !reduce){
