@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="https://christoyannis.com/en/archivio-dashboard.html" rel="canonical"/><meta content="en_GB" property="og:locale"/><link href="https://christoyannis.com/archivio-dashboard.html" hreflang="it" rel="alternate"/><link href="https://christoyannis.com/en/archivio-dashboard.html" hreflang="en" rel="alternate"/><link href="https://christoyannis.com/archivio-dashboard.html" hreflang="x-default" rel="alternate"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ESG Dashboard Archive · Constantino Christoyannis</title>
+<meta content="Every edition of Constantino Christoyannis's ESG dashboard: the numbers he tracks week after week on credit, risk, companies and funds." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&amp;family=Spectral:ital,wght@1,400;1,500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --deep:#0a1631; --deep-2:#173561; --on-deep:#eef2f8; --on-deep-muted:#a9b8d2;
+  --paper:#ffffff; --paper-2:#f1f4f9; --ink:#121c2e; --muted:#5a6578; --rule:#d8dfe9;
+  --brass:#c9a24a; --brass-ink:#7a5c1c; --ledger:#1d4e89;
+  --head:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Spectral", Georgia, serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --deep:#060e20; --deep-2:#0f2142; --paper:#0b1424; --paper-2:#111d33; --ink:#e7ecf3; --muted:#9daac0; --rule:#22304a;
+  --brass-ink:#d9b45e; --ledger:#8fb8ec; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:#163a6b;color:var(--on-deep);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--head);font-stretch:112%;letter-spacing:-.015em;margin:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+body:not(.is-en) [lang="en"]{display:none!important}
+body.is-en [lang="it"]{display:none!important}
+.kicker{font:500 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+header.top{background:var(--deep)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.back{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep);text-decoration:none}
+.back:hover{color:var(--brass)}
+.lang{display:flex;gap:2px}
+.lang button{font:500 .74rem var(--mono);letter-spacing:.08em;background:transparent;color:var(--on-deep-muted);border:1px solid transparent;padding:4px 7px;cursor:pointer;border-radius:2px}
+.lang button[aria-pressed="true"]{color:var(--on-deep);border-color:rgba(255,255,255,.3)}
+.dash{background:linear-gradient(180deg,#163a6b 0%,#1f4f8c 55%,#2c63a6 100%);color:var(--on-deep)}
+.dash .wrap{padding-block:64px 72px}
+.dash-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.dash-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff}
+.dash-head p{margin:0;max-width:52ch;color:#c9d6ea}
+.dash .kicker{color:var(--brass)}
+.stamp{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#c9d6ea;border:1px solid rgba(255,255,255,.25);padding:8px 12px;white-space:nowrap}
+.stamp time{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tile{background:rgba(6,14,34,.35);border:1px solid rgba(255,255,255,.12);padding:22px;display:flex;flex-direction:column;gap:8px;backdrop-filter:blur(2px);transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-3px);border-color:var(--brass)}
+.tile .tag{margin:0;font:500 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.tile b{font-family:var(--head);font-weight:800;font-stretch:118%;font-size:clamp(2.1rem,3.6vw,2.8rem);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.tile .lbl{margin:0;color:#d5e0f0;font-size:.93rem;flex:1}
+.tile .trend{margin:4px 0 0;font:600 .78rem var(--body);display:inline-block;align-self:flex-start;padding:3px 8px;border-radius:2px;background:rgba(255,255,255,.1);color:#fff}
+.tile .trend.up{background:rgba(201,162,74,.22);color:#f0d798}
+.tile .trend.down{background:rgba(255,255,255,.12);color:#ffd2c2}
+.tile a{font-size:.75rem;color:#b7c7df;text-decoration:none}
+.tile a:hover{text-decoration:underline}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+.dash{min-height:100vh}
+.ed{margin-top:48px}
+.ed:first-of-type{margin-top:0}
+.ed-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.ed-head h2{font-size:1.35rem;font-weight:700;color:#fff}
+.ed-head .now{font:500 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#0a1631;background:var(--brass);padding:3px 8px}
+.retro{margin-top:72px;padding-top:40px;border-top:1px solid rgba(255,255,255,.2)}
+.retro-head{margin-bottom:28px}
+.retro-head h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:10px}
+.retro-head p{margin:0;max-width:60ch;color:#c9d6ea}
+.retro .ed-head{margin:32px 0 14px}
+.retro .ed-head h3{font-family:var(--head);font-size:1.2rem;font-weight:700;color:var(--brass);letter-spacing:.04em}
+footer{background:var(--deep);color:var(--on-deep-muted);font-size:.85rem}
+footer .wrap{padding-block:24px}
+footer a{color:inherit}
+</style>
+</head>
+<body class="is-en">
+<header class="top"><div class="wrap">
+<a class="back" href="./#dashboard">← <span lang="en">Back to the site</span></a>
+<div aria-label="Lingua / Language" class="lang" role="group"><button aria-pressed="false" id="btn-it" type="button">IT</button><button aria-pressed="true" id="btn-en" type="button">EN</button></div>
+</div></header>
+<main class="dash">
+<div class="wrap">
+<div class="dash-head">
+<div>
+<p class="kicker"><span lang="en">ESG thermometer</span></p>
+
+<h1 class="h" lang="en" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;margin-bottom:12px;color:#fff">ESG dashboard archive</h1>
+
+<p lang="en">Every edition, newest first. I update the figures I track every week: here you can see how they change over time.</p>
+</div>
+</div>
+<!-- EDIZIONI: la più recente in alto. Ogni venerdì aggiungere una nuova <section class="ed"> qui sotto e spostare il badge "now". -->
+<section class="ed" id="ed-2026-11-13">
+<div class="ed-head"><h2><time datetime="2026-11-13">13.11.2026</time></h2><span class="now"><span lang="en">Current</span></span></div>
+<div class="tiles">
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">$508 bn</span></b><p class="lbl" lang="en">in green bonds issued in the first nine months of 2026, a record; Europe accounts for 57% of sustainable issuance</p><p class="trend up"><span lang="en">▲ +29% y/y</span></p><a href="https://www.milanofinanza.it/news/green-bond-record-a-508-miliardi-nei-9-mesi-l-europa-domina-202610290024186269" rel="noopener" target="_blank">MF Milano Finanza, 28.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">63%</span></b><p class="lbl" lang="en">of Italian banks offer companies technical support to plan and assess ESG investments</p><p class="trend up"><span lang="en">▲ Over 90% offer green loans</span></p><a href="https://www.teleborsa.it/News/2026/10/29/abi-ffs-banche-in-prima-linea-per-sviluppo-sostenibile-famiglie-e-imprese-155.html" rel="noopener" target="_blank">Teleborsa, 29.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Risk</span></p><b><span lang="en">36.6%</span></b><p class="lbl" lang="en">of Italian SMEs face high physical climate risk</p><p class="trend down"><span lang="en">Italy hardest hit in the EU</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Companies</span></p><b><span lang="en">91%</span></b><p class="lbl" lang="en">of companies that see the transition as an opportunity have no concrete plan</p><p class="trend down"><span lang="en">The gap to close</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Funding</span></p><b><span lang="en">€30 bn</span></b><p class="lbl" lang="en">in EIB funding for climate adaptation by 2030, including smaller firms</p><p class="trend up"><span lang="en">▲ Doubled</span></p><a href="https://esgnews.it/finanza/banche/bei-raddoppiano-i-fondi-per-ladattamento-climatico-30-miliardi-entro-il-2030/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Value</span></p><b><span lang="en">+13%</span></b><p class="lbl" lang="en">estimated revenue for benefit corporations versus similar firms</p><p class="trend up"><span lang="en">▲ Purpose pays</span></p><a href="https://esgnews.it/aziende/societa-benefit-la-sostenibilita-premia-la-crescita-fatturato-piu-alto-del-13-rispetto-alle-altre-imprese/" rel="noopener" target="_blank">ESG News, 27.10.2026 ↗</a></article>
+</div>
+</section>
+<section class="ed" id="ed-2026-11-06">
+<div class="ed-head"><h2><time datetime="2026-11-06">06.11.2026</time></h2></div>
+<div class="tiles">
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">$508 bn</span></b><p class="lbl" lang="en">in green bonds issued in the first nine months of 2026, a record; Europe accounts for 57% of sustainable issuance</p><p class="trend up"><span lang="en">▲ +29% y/y</span></p><a href="https://www.milanofinanza.it/news/green-bond-record-a-508-miliardi-nei-9-mesi-l-europa-domina-202610290024186269" rel="noopener" target="_blank">MF Milano Finanza, 28.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">2026</span></b><p class="lbl" lang="en">banks assess ESG risk in lending; smaller banks by January 2027</p><p class="trend flat"><span lang="en">EBA guidelines</span></p><a href="https://www.ecosostenibile.eu/blog/linee-guida-eba-rischi-esg-credito-bancario/" rel="noopener" target="_blank">EBA ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Risk</span></p><b><span lang="en">36.6%</span></b><p class="lbl" lang="en">of Italian SMEs face high physical climate risk</p><p class="trend down"><span lang="en">Italy hardest hit in the EU</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Companies</span></p><b><span lang="en">91%</span></b><p class="lbl" lang="en">of companies that see the transition as an opportunity have no concrete plan</p><p class="trend down"><span lang="en">The gap to close</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Funding</span></p><b><span lang="en">€30 bn</span></b><p class="lbl" lang="en">in EIB funding for climate adaptation by 2030, including smaller firms</p><p class="trend up"><span lang="en">▲ Doubled</span></p><a href="https://esgnews.it/finanza/banche/bei-raddoppiano-i-fondi-per-ladattamento-climatico-30-miliardi-entro-il-2030/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Value</span></p><b><span lang="en">+13%</span></b><p class="lbl" lang="en">estimated revenue for benefit corporations versus similar firms</p><p class="trend up"><span lang="en">▲ Purpose pays</span></p><a href="https://esgnews.it/aziende/societa-benefit-la-sostenibilita-premia-la-crescita-fatturato-piu-alto-del-13-rispetto-alle-altre-imprese/" rel="noopener" target="_blank">ESG News, 27.10.2026 ↗</a></article>
+</div>
+</section>
+<section class="ed" id="ed-2026-10-29">
+<div class="ed-head"><h2><time datetime="2026-10-29">29.10.2026</time></h2></div>
+<div class="tiles">
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">€32 bn</span></b><p class="lbl" lang="en">sustainable finance from Deutsche Bank in Q3</p><p class="trend up"><span lang="en">▲ +42% q/q</span></p><a href="https://www.esgtoday.com/deutsche-bank-reports-record-e32-billion-sustainable-finance-quarter/" rel="noopener" target="_blank">ESG Today, 28.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">2026</span></b><p class="lbl" lang="en">banks assess ESG risk in lending; smaller banks by January 2027</p><p class="trend flat"><span lang="en">EBA guidelines</span></p><a href="https://www.ecosostenibile.eu/blog/linee-guida-eba-rischi-esg-credito-bancario/" rel="noopener" target="_blank">EBA ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Risk</span></p><b><span lang="en">36.6%</span></b><p class="lbl" lang="en">of Italian SMEs face high physical climate risk</p><p class="trend down"><span lang="en">Italy hardest hit in the EU</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Companies</span></p><b><span lang="en">91%</span></b><p class="lbl" lang="en">of companies that see the transition as an opportunity have no concrete plan</p><p class="trend down"><span lang="en">The gap to close</span></p><a href="https://esgnews.it/environmental/il-conto-salato-della-crisi-climatica-915-miliardi-in-europa-italia-la-piu-colpita/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Funding</span></p><b><span lang="en">€30 bn</span></b><p class="lbl" lang="en">in EIB funding for climate adaptation by 2030, including smaller firms</p><p class="trend up"><span lang="en">▲ Doubled</span></p><a href="https://esgnews.it/finanza/banche/bei-raddoppiano-i-fondi-per-ladattamento-climatico-30-miliardi-entro-il-2030/" rel="noopener" target="_blank">ESG News, 23.10.2026 ↗</a></article>
+<article class="tile"><p class="tag"><span lang="en">Value</span></p><b><span lang="en">+13%</span></b><p class="lbl" lang="en">estimated revenue for benefit corporations versus similar firms</p><p class="trend up"><span lang="en">▲ Purpose pays</span></p><a href="https://esgnews.it/aziende/societa-benefit-la-sostenibilita-premia-la-crescita-fatturato-piu-alto-del-13-rispetto-alle-altre-imprese/" rel="noopener" target="_blank">ESG News, 27.10.2026 ↗</a></article>
+</div>
+</section>
+<section class="retro" id="retrospettiva">
+<div class="retro-head">
+<h2 lang="en">Retrospective selection 2024-2026</h2>
+
+<p lang="en">These are not weekly editions: it is a selection of the figures that marked the last three years, in Italy and worldwide.</p>
+</div>
+<div class="ed-head"><h3>2026</h3></div>
+<div class="tiles"><article class="tile"><p class="tag"><span lang="en">Rules</span></p><b><span lang="en">−90%</span></b><p class="lbl" lang="en">companies removed from the CSRD by the Omnibus approved on 24 February 2026: only those above 1,000 employees and €450 m turnover remain</p><a href="https://www.esgtoday.com/eu-states-give-final-approval-to-omnibus-package-to-cut-sustainability-reporting-and-due-diligence-requirements/" rel="noopener" target="_blank">ESG Today, 24.02.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Companies</span></p><b><span lang="en">12,317</span></b><p class="lbl" lang="en">Italian companies with gender equality certification, over four times the 3,000 recovery-plan target</p><a href="https://www.imprenditoriafemminile.camcom.it/PDF/Unioncamere---Parit%C3%A0-di-genere--oltre-12mila-le-imprese-certificate_3471.htm" rel="noopener" target="_blank">Unioncamere, 03.03.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Energy</span></p><b><span lang="en">42.1%</span></b><p class="lbl" lang="en">of Italy's electricity demand met by renewables from January to September</p><a href="https://www.borsaitaliana.it/borsa/notizie/teleborsa/economia/terna-consumi-elettrici-in-crescita-a-settembre-65-record-dal-2014-91_2026-10-21_TLB.html" rel="noopener" target="_blank">Terna, 21.10.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Emissions</span></p><b><span lang="en">58.4 Gt</span></b><p class="lbl" lang="en">of CO₂e emitted worldwide in 2025, a first slight decline; current policies point to +2.8 °C</p><a href="https://www.downtoearth.org.in/amp/story/climate-change/emissions-gap-report-2026-point-of-no-return-for-the-15c-warming-threshold" rel="noopener" target="_blank">UNEP, 21.10.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">$7 tn</span></b><p class="lbl" lang="en">cumulative aligned sustainable debt passes this mark; over $1 tn a year since 2023</p><a href="https://www.climatebonds.net/news-events/press-room/press-releases/sustainable-debt-market-surpasses-usd7tn-aligned-issuance" rel="noopener" target="_blank">Climate Bonds, 26.05.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Funds</span></p><b><span lang="en">+$3.7 bn</span></b><p class="lbl" lang="en">net inflows into sustainable funds in Q2, the second positive quarter in a row (Europe +$3.5 bn)</p><a href="https://www.esgtoday.com/u-s-sustainable-fund-flows-turn-positive-for-first-time-since-2022-morningstar/" rel="noopener" target="_blank">Morningstar, 03.08.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Supply chains</span></p><b><span lang="en">136.0</span></b><p class="lbl" lang="en">points on the FAO Food Price Index in September, up 5.8% year on year</p><a href="https://www.fao.org/worldfoodsituation/foodpricesindex/en/" rel="noopener" target="_blank">FAO, 02.10.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Risk</span></p><b><span lang="en">$44 bn</span></b><p class="lbl" lang="en">insured natural catastrophe losses in H1, below the five-year average ($66 bn)</p><a href="https://www.businessinsurance.com/h1-nat-cat-insured-losses-at-below-average-44b-munich-re/" rel="noopener" target="_blank">Munich Re, 30.07.2026 ↗</a></article></div>
+<div class="ed-head"><h3>2025</h3></div>
+<div class="tiles"><article class="tile"><p class="tag"><span lang="en">Rules</span></p><b><span lang="en">−80%</span></b><p class="lbl" lang="en">companies in CSRD scope under the Commission's Omnibus proposal (threshold raised from 250 to 1,000 employees)</p><a href="https://www.esgtoday.com/eu-states-give-final-approval-to-omnibus-package-to-cut-sustainability-reporting-and-due-diligence-requirements/" rel="noopener" target="_blank">ESG Today ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Risk</span></p><b><span lang="en">3 million</span></b><p class="lbl" lang="en">Italian companies required to insure against natural catastrophes from 31 March 2025 (SACE estimate)</p><a href="https://tg24.sky.it/economia/2025/03/08/assicurazione-polizza-catastrofale-imprese-regole" rel="noopener" target="_blank">Sky TG24, 08.03.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Funding</span></p><b><span lang="en">8%</span></b><p class="lbl" lang="en">of the €6.2 bn Transizione 5.0 budget booked by companies by March 2025: the government announces a cut</p><a href="https://www.informazionefiscale.it/Agevolazioni-imprese-2025-flop-transizione-5-0" rel="noopener" target="_blank">Informazione Fiscale, 10.03.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Transition</span></p><b><span lang="en">$2.3 tn</span></b><p class="lbl" lang="en">global energy transition investment; the EU grows 18% to $455 bn</p><a href="https://about.bnef.com/insights/clean-energy/bloombergnef-finds-global-energy-transition-investment-reached-record-2-3-trillion-in-2025-up-8-from-2024" rel="noopener" target="_blank">BloombergNEF, 26.01.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Funds</span></p><b><span lang="en">−$84 bn</span></b><p class="lbl" lang="en">net outflows from sustainable funds, with assets still above $3.9 tn (86% in Europe)</p><a href="https://global.morningstar.com/en-gb/sustainable-investing/esg-funds-2025-closes-with-continued-outflows-amid-persistent-headwinds" rel="noopener" target="_blank">Morningstar, Q4 2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Supply chains</span></p><b><span lang="en">127.2</span></b><p class="lbl" lang="en">points on the FAO Food Price Index, annual average up 4.3% on 2024</p><a href="https://www.fao.org/newsroom/detail/fao-food-price-index-dips-in-december-despite-higher-world-cereal-quotations/en" rel="noopener" target="_blank">FAO, 09.01.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Climate</span></p><b><span lang="en">+1.47 °C</span></b><p class="lbl" lang="en">2025 was the third-warmest year on record</p><a href="https://www.ecmwf.int/en/about/media-centre/news/2025/2025-third-warmest-year" rel="noopener" target="_blank">Copernicus/ECMWF, 14.01.2026 ↗</a></article></div>
+<div class="ed-head"><h3>2024</h3></div>
+<div class="tiles"><article class="tile"><p class="tag"><span lang="en">Climate</span></p><b><span lang="en">+1.60 °C</span></b><p class="lbl" lang="en">2024 was the first calendar year above the 1.5 °C threshold over pre-industrial levels</p><a href="https://www.ecmwf.int/en/about/media-centre/news/2025/2025-third-warmest-year" rel="noopener" target="_blank">Copernicus/ECMWF ↗</a></article><article class="tile"><p class="tag"><span lang="en">Transition</span></p><b><span lang="en">$2.1 tn</span></b><p class="lbl" lang="en">global energy transition investment, up 11% on 2023</p><a href="https://about.bnef.com/blog/global-investment-in-the-energy-transition-exceeded-2-trillion-for-the-first-time-in-2024-according-to-bloombergnef-report" rel="noopener" target="_blank">BloombergNEF, 30.01.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Credit</span></p><b><span lang="en">$1.05 tn</span></b><p class="lbl" lang="en">aligned sustainable debt issued in 2024, over 10,000 deals</p><a href="https://mondovisione.com/media-and-resources/news/sustainable-bond-market-reaches-new-highs-2024-analysis-showcases-31-increase-2025529/" rel="noopener" target="_blank">Climate Bonds, 29.05.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Rules</span></p><b><span lang="en">Decree 125/2024</span></b><p class="lbl" lang="en">Italy transposes the CSRD: large listed companies, banks and insurers report from FY2024</p><a href="https://www.quotidianopiu.it/dettaglio/11062505/esg-quali-imprese-devono-adeguarsi-ai-nuovi-obblighi-nel-2025" rel="noopener" target="_blank">QuotidianoPiù, 02.01.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Italy · Energy</span></p><b><span lang="en">41.2%</span></b><p class="lbl" lang="en">of Italy's electricity demand met by renewables, up from 37.1% in 2023</p><a href="https://italia-informa.com/public/italiainforma/ComunicatiStampa/Terna/TERNA_16_GENNAIO.pdf" rel="noopener" target="_blank">Terna, 16.01.2025 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Risk</span></p><b><span lang="en">$368 bn</span></b><p class="lbl" lang="en">global natural catastrophe losses, $147 bn of them insured</p><a href="https://www.businessinsurance.com/wildfires-storms-fuel-2025-insured-losses-of-108-billion-munich-re-says/" rel="noopener" target="_blank">Munich Re, 13.01.2026 ↗</a></article><article class="tile"><p class="tag"><span lang="en">Funds</span></p><b><span lang="en">$3.2 tn</span></b><p class="lbl" lang="en">global sustainable fund assets; $52.4 bn of inflows in Europe</p><a href="https://www.esgtoday.com/sustainable-fund-flows-rebound-in-q4-2024-as-both-european-inflows-and-u-s-outflows-accelerate-morningstar/" rel="noopener" target="_blank">Morningstar, 29.01.2025 ↗</a></article></div>
+</section>
+</div>
+</main>
+<footer><div class="wrap">© 2026 Constantino Christoyannis · <a href="../privacy.html">Privacy</a></div></footer>
+<script>
+(function(){
+  var body=document.body,bi=document.getElementById('btn-it'),be=document.getElementById('btn-en');
+  function set(l){body.classList.toggle('is-en',l==='en');document.documentElement.lang=l;bi.setAttribute('aria-pressed',l==='it');be.setAttribute('aria-pressed',l==='en');}
+  document.getElementById('btn-it').addEventListener('click',function(){location.href="../archivio-dashboard.html"});document.getElementById('btn-en').addEventListener('click',function(){location.href="archivio-dashboard.html"});
+  var start='it';try{if(localStorage.getItem('lang')==='en')start='en'}catch(e){}start='en';set(start);
+})();
+</script>
+<script>/* statistiche anonime GoatCounter, solo sul sito pubblicato */
+if(/(^|\.)christoyannis\.com$|github\.io$/.test(location.hostname)){var g=document.createElement('script');g.async=true;g.src='https://gc.zgo.at/count.js';g.dataset.goatcounter='https://cchristoyannis.goatcounter.com/count';document.body.appendChild(g)}</script>
+</body>
+</html>
